@@ -1,9 +1,8 @@
 /* =============================================
    CHARLY — Portfolio Site
-   Base Stylesheet
+   Minimal / Editorial Redesign
    ============================================= */
 
-/* --- Reset & Base --- */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -11,60 +10,50 @@
 }
 
 :root {
-  --black:      #0a0a0a;
-  --dark:       #111111;
-  --mid:        #1a1a1a;
-  --border:     #2a2a2a;
-  --muted:      #666666;
-  --light:      #aaaaaa;
-  --white:      #f5f5f5;
-  --accent:     #c9a84c;   /* gold */
+  --bg:         #ffffff;
+  --text:       #1a1a1a;
+  --muted:      #888888;
+  --light:      #cccccc;
+  --border:     #e0e0e0;
+  --warm:       #d6cfc4;
+  --accent:     #b8860b;
   --font-serif: 'Georgia', 'Times New Roman', serif;
   --font-sans:  'Helvetica Neue', 'Arial', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--black);
-  color: var(--white);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* --- Navigation --- */
+/* --- Nav --- */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 3rem;
-  background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+  padding: 1.4rem 3rem;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-logo {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  letter-spacing: 0.15em;
-  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .nav-links {
@@ -74,239 +63,331 @@ nav {
 }
 
 .nav-links a {
-  font-size: 0.78rem;
-  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--light);
-  transition: color 0.2s ease;
+  color: var(--muted);
+  transition: color 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent);
+  color: var(--text);
 }
 
-/* --- Hero (Home Page) --- */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 6rem 2rem 4rem;
+/* --- Hero Banner --- */
+.hero-banner {
+  margin-top: 52px;
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(160deg, #d6cfc4 0%, #e8e2d8 40%, #f5f2ec 70%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
+.hero-banner::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 70%);
-  pointer-events: none;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, #fff, transparent);
 }
 
-.hero-eyebrow {
+/* --- Welcome Block --- */
+.welcome {
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.welcome h1 {
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
 }
 
-.hero-name {
-  font-family: var(--font-serif);
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: normal;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.hero-tagline {
-  font-size: 0.9rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 3rem;
-}
-
-.hero-cta {
-  display: inline-block;
-  padding: 0.85rem 2.5rem;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.hero-cta:hover {
-  background: var(--accent);
-  color: var(--black);
-}
-
-/* --- Section Base --- */
-section {
-  padding: 6rem 3rem;
-  max-width: 1100px;
+.welcome-dash {
+  width: 1px;
+  height: 20px;
+  background: var(--text);
   margin: 0 auto;
 }
 
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: normal;
-  color: var(--white);
-  margin-bottom: 2rem;
-}
-
-.divider {
-  width: 40px;
-  height: 1px;
-  background: var(--accent);
-  margin-bottom: 2.5rem;
-}
-
-/* --- Music Grid --- */
-.music-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.music-card {
-  background: var(--mid);
-  border: 1px solid var(--border);
-  padding: 1.5rem;
-  transition: border-color 0.2s ease;
-}
-
-.music-card:hover {
-  border-color: var(--accent);
-}
-
-.music-card-type {
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.music-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  margin-bottom: 0.25rem;
-}
-
-.music-card-year {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-bottom: 1rem;
-}
-
-.music-card-link {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 1px;
-  transition: opacity 0.2s;
-}
-
-.music-card-link:hover {
-  opacity: 0.7;
-}
-
-/* --- About Page --- */
-.about-grid {
+/* --- Feature Section (release spotlight) --- */
+.feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
   gap: 5rem;
-  align-items: start;
-  margin-top: 3rem;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
 }
 
-.about-text p {
-  color: var(--light);
-  margin-bottom: 1.25rem;
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-.about-photo {
+.feature-image {
   width: 100%;
-  aspect-ratio: 3/4;
-  background: var(--mid);
-  border: 1px solid var(--border);
+  aspect-ratio: 1/1;
+  background: #2a2a2a;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--muted);
-  font-size: 0.8rem;
+  color: #666;
+  font-size: 0.7rem;
   letter-spacing: 0.1em;
 }
 
-.about-photo img {
+.feature-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* --- Contact Page --- */
-.contact-grid {
+.feature-text {
+  text-align: right;
+}
+
+.feature-text h2 {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.feature-text p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.feature-link {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 1px;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.feature-link:hover { opacity: 0.5; }
+
+/* --- Two-col Grid (works / news) --- */
+.grid-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.grid-section-header {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #1a1a1a;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+
+.card h3 {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.card-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--muted);
+  padding-bottom: 1px;
+  color: var(--muted);
+  display: inline-block;
+}
+
+.card-link:hover { color: var(--text); border-color: var(--text); }
+
+/* --- Inner Page Header --- */
+.page-header {
+  margin-top: 52px;
+  padding: 5rem 3rem 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header p {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: normal;
+}
+
+/* --- Music Page --- */
+.music-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+}
+
+.music-list {
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.music-list li {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+
+.music-list .release-type {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.music-list .release-year {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.music-list .release-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--muted);
+  padding-bottom: 1px;
+  color: var(--muted);
+  display: inline-block;
+}
+
+.music-list .release-link:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+/* --- About Page --- */
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  margin-top: 3rem;
+  align-items: start;
+}
+
+.about-body p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #e0dbd4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.about-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* --- Contact Page --- */
+.contact-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
 }
 
 .contact-info p {
-  color: var(--light);
+  font-size: 0.85rem;
+  color: var(--muted);
   line-height: 1.8;
   margin-bottom: 2rem;
 }
 
-.contact-link {
+.contact-detail {
   display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-  transition: opacity 0.2s;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
 }
 
-.contact-link:hover { opacity: 0.7; }
+.contact-detail:hover { color: var(--text); }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  background: var(--mid);
-  border: 1px solid var(--border);
-  color: var(--white);
-  padding: 0.85rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.7rem 0;
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
@@ -314,47 +395,48 @@ section {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: var(--muted);
+  color: var(--light);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--accent);
+  border-color: var(--text);
 }
 
 .contact-form textarea {
-  min-height: 140px;
+  min-height: 120px;
   resize: vertical;
 }
 
 .contact-form button {
   background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  padding: 0.85rem 2rem;
-  font-size: 0.75rem;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 0.75rem 2rem;
+  font-size: 0.68rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   align-self: flex-start;
+  margin-top: 0.5rem;
 }
 
 .contact-form button:hover {
-  background: var(--accent);
-  color: var(--black);
+  background: var(--text);
+  color: var(--bg);
 }
 
 /* --- Footer --- */
 footer {
   border-top: 1px solid var(--border);
-  padding: 2rem 3rem;
+  padding: 1.75rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   color: var(--muted);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .footer-socials {
@@ -364,39 +446,42 @@ footer {
 
 .footer-socials a {
   color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
 }
 
-.footer-socials a:hover { color: var(--accent); }
-
-/* --- Page Header (inner pages) --- */
-.page-header {
-  padding: 12rem 3rem 4rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
+.footer-socials a:hover { color: var(--text); }
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  nav {
-    padding: 1.25rem 1.5rem;
-  }
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { gap: 1.25rem; }
 
-  .nav-links {
-    gap: 1.5rem;
-  }
+  .hero-banner { height: 260px; }
 
-  section {
-    padding: 4rem 1.5rem;
-  }
-
-  .about-grid,
-  .contact-grid {
+  .feature,
+  .two-col,
+  .about-section,
+  .contact-section {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .feature { padding: 3rem 1.5rem; }
+  .feature-text { text-align: left; }
+
+  .grid-section,
+  .music-section,
+  .about-section,
+  .contact-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .music-list li {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
   }
 
   footer {
