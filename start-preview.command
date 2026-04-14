@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Charly Portfolio — Local Preview Server
+# Charlie Portfolio — Local Preview Server
 # Double-click this file to start the preview
 
 # Go to the folder this script lives in
 cd "$(dirname "$0")"
 
 echo ""
-echo "  🎵 Charly Portfolio — Preview Server"
+echo "  🎵 Charlie Portfolio — Preview Server"
 echo "  ─────────────────────────────────────"
 echo "  Starting server..."
 echo ""
