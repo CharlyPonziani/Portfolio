@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Charly — Booking and contact" />
+  <title>Contact — Charly</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Charly</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <p class="section-label">Get In Touch</p>
+    <h1 class="section-title">Contact</h1>
+  </div>
+
+  <!-- Contact Section -->
+  <section>
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <p class="section-label">Bookings & Press</p>
+        <div class="divider"></div>
+        <p>
+          For bookings, collaborations, press enquiries or anything else —
+          send a message using the form or reach out directly.
+        </p>
+
+        <!-- Update these links once Charly has accounts set up -->
+        <a href="mailto:hello@charly.com" class="contact-link">hello@charly.com</a>
+        <a href="#" class="contact-link" target="_blank">Instagram</a>
+        <a href="#" class="contact-link" target="_blank">Spotify</a>
+      </div>
+
+      <!-- Contact form — works out of the box with Netlify Forms once deployed -->
+      <form
+        class="contact-form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <!-- Netlify spam protection (hidden, don't remove) -->
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none">
+          <input name="bot-field" />
+        </p>
+
+        <input type="text"  name="name"    placeholder="Your name"          required />
+        <input type="email" name="email"   placeholder="Your email"         required />
+        <input type="text"  name="subject" placeholder="Subject (e.g. Booking enquiry)" />
+        <textarea           name="message" placeholder="Your message..."    required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2026 Charly</span>
+    <div class="footer-socials">
+      <a href="#" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Spotify</a>
+      <a href="#" target="_blank">YouTube</a>
+      <a href="#" target="_blank">SoundCloud</a>
+    </div>
+  </footer>
+
+</body>
+</html>
