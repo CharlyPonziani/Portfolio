@@ -12,47 +12,52 @@
   <nav>
     <a href="index.html" class="nav-logo">Charly Ponziani</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="about.html" class="active">About / Contact</a></li>
+      <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+      <li><a href="music.html" data-en="Music" data-it="Musica">Music</a></li>
+      <li><a href="about.html" class="active" data-en="About / Contact" data-it="Chi sono / Contatti">About / Contact</a></li>
     </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>/</span>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
   </nav>
 
   <div class="page-header" style="margin-top:52px;">
-    <p>The Artist</p>
-    <h1>About Charly</h1>
+    <p data-en="The Artist" data-it="L'Artista">The Artist</p>
+    <h1 data-en="About Charly" data-it="Chi è Charly">About Charly</h1>
   </div>
 
   <div class="about-section">
 
     <div>
       <div class="about-body">
-        <p>
-          Charly Ponziani is a singer-songwriter, producer, and multi-instrumentalist
-          building her sound from the ground up. Raw, real, and entirely her own.
+        <p data-en="Charly Ponziani is a singer-songwriter, producer, and multi-instrumentalist building her sound from the ground up. Raw, real, and entirely her own."
+           data-it="Charly Ponziani è una cantautrice, produttrice e multi-strumentista che costruisce il suo suono dalle fondamenta. Autentico, reale e completamente suo.">
+          Charly Ponziani is a singer-songwriter, producer, and multi-instrumentalist building her sound from the ground up. Raw, real, and entirely her own.
         </p>
-        <p>
-          [Your full story goes here — where you're from, how you got into music,
-          what drives you, what your sound is about.]
+        <p data-en="[Your full story goes here — where you're from, how you got into music, what drives you, what your sound is about.]"
+           data-it="[La tua storia completa va qui — da dove vieni, come ti sei avvicinata alla musica, cosa ti spinge, di cosa parla il tuo suono.]">
+          [Your full story goes here — where you're from, how you got into music, what drives you, what your sound is about.]
         </p>
       </div>
 
       <br />
 
-      <!-- Contact info embedded in about page -->
-      <p style="font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:1.5rem;">Contact</p>
+      <p style="font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:1.5rem;"
+         data-en="Contact" data-it="Contatti">Contact</p>
 
-      <p style="font-size:0.82rem;color:#888;line-height:1.8;margin-bottom:1.5rem;">
+      <p style="font-size:0.82rem;color:#888;line-height:1.8;margin-bottom:1.5rem;"
+         data-en="For bookings, collaborations and press enquiries."
+         data-it="Per concerti, collaborazioni e richieste stampa.">
         For bookings, collaborations and press enquiries.
       </p>
 
-      <div class="contact-section" style="padding:0;display:block;">
+      <div style="margin-bottom:2rem;">
         <a href="mailto:hello@charlyponziani.com" class="contact-detail">hello@charlyponziani.com</a>
         <a href="#" class="contact-detail" target="_blank">Instagram</a>
         <a href="#" class="contact-detail" target="_blank">Spotify</a>
       </div>
-
-      <br /><br />
 
       <form
         class="contact-form"
@@ -63,17 +68,21 @@
       >
         <input type="hidden" name="form-name" value="contact" />
         <p style="display:none"><input name="bot-field" /></p>
-        <input type="text"  name="name"    placeholder="Your name"    required />
-        <input type="email" name="email"   placeholder="Your email"   required />
-        <input type="text"  name="subject" placeholder="Subject"      />
-        <textarea           name="message" placeholder="Message..."   required></textarea>
-        <button type="submit">Send Message</button>
+        <input type="text"  name="name"    placeholder="Your name"
+               data-placeholder-en="Your name" data-placeholder-it="Il tuo nome" required />
+        <input type="email" name="email"   placeholder="Your email"
+               data-placeholder-en="Your email" data-placeholder-it="La tua email" required />
+        <input type="text"  name="subject" placeholder="Subject"
+               data-placeholder-en="Subject" data-placeholder-it="Oggetto" />
+        <textarea           name="message" placeholder="Message..."
+               data-placeholder-en="Message..." data-placeholder-it="Messaggio..." required></textarea>
+        <button type="submit" data-en="Send Message" data-it="Invia Messaggio">Send Message</button>
       </form>
     </div>
 
     <div class="about-photo">
       <!-- <img src="assets/images/press-photo.jpg" alt="Charly Ponziani" /> -->
-      <span>Press photo</span>
+      <span data-en="Press photo" data-it="Foto stampa">Press photo</span>
     </div>
 
   </div>
@@ -88,5 +97,6 @@
     </div>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>

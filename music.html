@@ -12,15 +12,20 @@
   <nav>
     <a href="index.html" class="nav-logo">Charly Ponziani</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="music.html" class="active">Music</a></li>
-      <li><a href="about.html">About / Contact</a></li>
+      <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+      <li><a href="music.html" class="active" data-en="Music" data-it="Musica">Music</a></li>
+      <li><a href="about.html" data-en="About / Contact" data-it="Chi sono / Contatti">About / Contact</a></li>
     </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>/</span>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
   </nav>
 
   <div class="page-header" style="margin-top:52px;">
-    <p>Discography</p>
-    <h1>Music</h1>
+    <p data-en="Discography" data-it="Discografia">Discography</p>
+    <h1 data-en="Music" data-it="Musica">Music</h1>
   </div>
 
   <div class="music-section">
@@ -28,23 +33,23 @@
 
       <li>
         <span>Song Title</span>
-        <span class="release-type">Single</span>
+        <span class="release-type" data-en="Single" data-it="Singolo">Single</span>
         <span class="release-year">2026</span>
-        <a href="#" class="release-link">Listen →</a>
+        <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
       </li>
 
       <li>
         <span>EP Title</span>
         <span class="release-type">EP</span>
         <span class="release-year">2026</span>
-        <a href="#" class="release-link">Listen →</a>
+        <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
       </li>
 
       <li>
         <span>Song Title</span>
-        <span class="release-type">Single</span>
+        <span class="release-type" data-en="Single" data-it="Singolo">Single</span>
         <span class="release-year">2025</span>
-        <a href="#" class="release-link">Listen →</a>
+        <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
       </li>
 
     </ul>
@@ -60,5 +65,6 @@
     </div>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>

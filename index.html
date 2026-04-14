@@ -12,10 +12,15 @@
   <nav>
     <a href="index.html" class="nav-logo">Charly Ponziani</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="about.html">About / Contact</a></li>
+      <li><a href="index.html" class="active" data-en="Home" data-it="Home">Home</a></li>
+      <li><a href="music.html" data-en="Music" data-it="Musica">Music</a></li>
+      <li><a href="about.html" data-en="About / Contact" data-it="Chi sono / Contatti">About / Contact</a></li>
     </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>/</span>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
   </nav>
 
   <!-- Hero Banner -->
@@ -23,7 +28,7 @@
 
   <!-- Welcome -->
   <div class="welcome">
-    <h1>Welcome</h1>
+    <h1 data-en="Welcome" data-it="Benvenuta">Welcome</h1>
     <div class="welcome-dash"></div>
   </div>
 
@@ -31,43 +36,39 @@
   <div class="feature">
     <div class="feature-image">
       <!-- <img src="assets/images/release-cover.jpg" alt="Release cover" /> -->
-      <span>Cover art</span>
+      <span data-en="Cover art" data-it="Copertina">Cover art</span>
     </div>
     <div class="feature-text">
-      <h2>Latest Release</h2>
-      <p>
-        Singer, songwriter, producer and multi-instrumentalist.
-        Creating music from an intimate and experimental perspective.
+      <h2 data-en="Latest Release" data-it="Ultimo Lavoro">Latest Release</h2>
+      <p data-en="Singer, songwriter, producer and multi-instrumentalist. Creating music from an intimate and experimental perspective."
+         data-it="Cantautrice, produttrice e multi-strumentista. Musica creata da una prospettiva intima e sperimentale.">
+        Singer, songwriter, producer and multi-instrumentalist. Creating music from an intimate and experimental perspective.
       </p>
-      <p>
-        Original compositions, collaborations and productions — rooted
-        in honest storytelling.
+      <p data-en="Original compositions, collaborations and productions — rooted in honest storytelling."
+         data-it="Composizioni originali, collaborazioni e produzioni — radicate nella narrazione autentica.">
+        Original compositions, collaborations and productions — rooted in honest storytelling.
       </p>
-      <a href="music.html" class="feature-link">Listen →</a>
+      <a href="music.html" class="feature-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
     </div>
   </div>
 
   <!-- Works & About grid -->
   <div class="grid-section">
-    <p class="grid-section-header">Works &amp; Collaborations</p>
+    <p class="grid-section-header" data-en="Works &amp; Collaborations" data-it="Lavori &amp; Collaborazioni">Works &amp; Collaborations</p>
     <div class="two-col">
 
       <div class="card">
-        <div class="card-image">
-          <!-- <img src="assets/images/work-1.jpg" alt="" /> -->
-        </div>
-        <h3>Original Music</h3>
-        <p>Singer-songwriter. Producer. Multi-instrumentalist.</p>
-        <a href="music.html" class="card-link">Music →</a>
+        <div class="card-image"></div>
+        <h3 data-en="Original Music" data-it="Musica Originale">Original Music</h3>
+        <p data-en="Singer-songwriter. Producer. Multi-instrumentalist." data-it="Cantautrice. Produttrice. Multi-strumentista.">Singer-songwriter. Producer. Multi-instrumentalist.</p>
+        <a href="music.html" class="card-link" data-en="Music →" data-it="Musica →">Music →</a>
       </div>
 
       <div class="card">
-        <div class="card-image">
-          <!-- <img src="assets/images/work-2.jpg" alt="" /> -->
-        </div>
-        <h3>Get In Touch</h3>
-        <p>Bookings, collaborations and press enquiries welcome.</p>
-        <a href="about.html" class="card-link">Contact →</a>
+        <div class="card-image"></div>
+        <h3 data-en="Get In Touch" data-it="Contatti">Get In Touch</h3>
+        <p data-en="Bookings, collaborations and press enquiries welcome." data-it="Disponibile per concerti, collaborazioni e stampa.">Bookings, collaborations and press enquiries welcome.</p>
+        <a href="about.html" class="card-link" data-en="Contact →" data-it="Contatti →">Contact →</a>
       </div>
 
     </div>
@@ -83,5 +84,6 @@
     </div>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>

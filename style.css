@@ -427,6 +427,38 @@ nav {
   color: var(--bg);
 }
 
+/* --- Language Toggle --- */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 2rem;
+}
+
+.lang-toggle span {
+  color: var(--light);
+  font-size: 0.65rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.lang-btn.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.lang-btn:hover { color: var(--text); }
+
 /* --- Footer --- */
 footer {
   border-top: 1px solid var(--border);
