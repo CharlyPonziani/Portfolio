@@ -99,80 +99,86 @@ nav {
 
 /* ---- HERO ---- */
 .hero {
-  min-height: 100vh;
-  position: relative;
+  max-width: 860px;
+  margin: 52px auto 0;
+  padding: 3rem 3rem 0;
+}
+
+.hero-image-wrap {
+  width: 100%;
+  height: 520px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 0 3.5rem 3.5rem;
+  position: relative;
 }
 
 .hero-photo {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 70%;
+  object-position: center 55%;
   display: block;
+  /* CSS sharpening — helps a little with compressed images */
+  filter: contrast(1.08) brightness(0.97);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Subtle dark gradient at bottom so text is readable */
-.hero::after {
+.hero-image-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.15) 40%,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.1) 45%,
     transparent 70%
   );
   pointer-events: none;
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
   z-index: 1;
 }
 
 .hero-badge {
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   border: 1px solid rgba(255,255,255,0.3);
-  padding: 0.35rem 1rem;
-  margin-bottom: 1.25rem;
+  padding: 0.3rem 0.9rem;
+  margin-bottom: 1rem;
   display: inline-block;
 }
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   font-weight: normal;
   letter-spacing: 0.04em;
   line-height: 1.1;
   color: #ffffff;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-sub {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
 }
 
 .hero-scroll {
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.4);
   position: absolute;
-  bottom: 2rem;
-  right: 3rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   z-index: 1;
 }
 
