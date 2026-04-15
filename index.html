@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Charly — Singer, Songwriter, Producer & Multi-Instrumentalist" />
-  <title>Charly — Musician</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Charly Ponziani — Pianist, Singer-Songwriter & Composer" />
+  <title>Charly Ponziani Music</title>
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">Charly Ponziani Music</a>
+    <a href="#top" class="nav-logo">Charly Ponziani Music</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active" data-en="Home" data-it="Home">Home</a></li>
-      <li><a href="music.html" data-en="Music" data-it="Musica">Music</a></li>
-      <li><a href="about.html" data-en="About / Contact" data-it="Chi sono / Contatti">About / Contact</a></li>
+      <li><a href="#music"   data-en="Music"    data-it="Musica">Music</a></li>
+      <li><a href="#bespoke" data-en="Bespoke"  data-it="Su misura">Bespoke</a></li>
+      <li><a href="#bio"     data-en="About"    data-it="Chi sono">About</a></li>
+      <li><a href="#contact" data-en="Contact"  data-it="Contatti">Contact</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn" data-lang="en">EN</button>
@@ -23,57 +25,173 @@
     </div>
   </nav>
 
-  <!-- Hero Banner -->
-  <div class="hero-banner"></div>
+  <!-- 1. HERO -->
+  <section id="top" class="hero">
+    <div class="hero-badge" data-en="BBC Radio Introducing" data-it="BBC Radio Introducing">BBC Radio Introducing</div>
+    <h1 class="hero-name">Charly Ponziani</h1>
+    <p class="hero-sub" data-en="Piano · Voice · Composition" data-it="Pianoforte · Voce · Composizione">Piano · Voice · Composition</p>
+    <a href="#music" class="hero-scroll" data-en="Scroll" data-it="Scorri">Scroll</a>
+  </section>
 
-  <!-- Welcome -->
-  <div class="welcome">
-    <h1 data-en="Welcome" data-it="Benvenuta">Welcome</h1>
-    <div class="welcome-dash"></div>
-  </div>
+  <!-- 2. MUSIC -->
+  <section id="music">
+    <div class="section-inner">
+      <p class="section-label" data-en="Releases" data-it="Uscite">Releases</p>
+      <h2 class="section-title" data-en="Music" data-it="Musica">Music</h2>
+      <div class="divider-line"></div>
 
-  <!-- Feature Release -->
-  <div class="feature">
-    <div class="feature-image">
-      <!-- <img src="assets/images/release-cover.jpg" alt="Release cover" /> -->
-      <span data-en="Cover art" data-it="Copertina">Cover art</span>
-    </div>
-    <div class="feature-text">
-      <h2 data-en="Latest Release" data-it="Ultimo Lavoro">Latest Release</h2>
-      <p data-en="Singer, songwriter, producer and multi-instrumentalist. Creating music from an intimate and experimental perspective."
-         data-it="Cantautrice, produttrice e multi-strumentista. Musica creata da una prospettiva intima e sperimentale.">
-        Singer, songwriter, producer and multi-instrumentalist. Creating music from an intimate and experimental perspective.
-      </p>
-      <p data-en="Original compositions, collaborations and productions — rooted in honest storytelling."
-         data-it="Composizioni originali, collaborazioni e produzioni — radicate nella narrazione autentica.">
-        Original compositions, collaborations and productions — rooted in honest storytelling.
-      </p>
-      <a href="music.html" class="feature-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
-    </div>
-  </div>
-
-  <!-- Works & About grid -->
-  <div class="grid-section">
-    <p class="grid-section-header" data-en="Works &amp; Collaborations" data-it="Lavori &amp; Collaborazioni">Works &amp; Collaborations</p>
-    <div class="two-col">
-
-      <div class="card">
-        <div class="card-image"></div>
-        <h3 data-en="Original Music" data-it="Musica Originale">Original Music</h3>
-        <p data-en="Singer-songwriter. Producer. Multi-instrumentalist." data-it="Cantautrice. Produttrice. Multi-strumentista.">Singer-songwriter. Producer. Multi-instrumentalist.</p>
-        <a href="music.html" class="card-link" data-en="Music →" data-it="Musica →">Music →</a>
+      <div class="music-feature">
+        <div class="music-cover">
+          <!-- <img src="assets/images/release-cover.jpg" alt="Release cover" /> -->
+          <span data-en="Cover art" data-it="Copertina">Cover art</span>
+        </div>
+        <div class="music-meta">
+          <p class="section-label" data-en="Latest Release" data-it="Ultimo Lavoro">Latest Release</p>
+          <h3 class="section-title" style="font-size:1.6rem;">Song / EP Title</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;"
+             data-en="[A line or two about the release — the feeling, the story behind it, what it means to you.]"
+             data-it="[Una o due righe sull'uscita — la sensazione, la storia dietro, cosa significa per te.]">
+            [A line or two about the release — the feeling, the story behind it, what it means to you.]
+          </p>
+          <div class="music-links">
+            <a href="#" class="text-link" data-en="Listen on Spotify →" data-it="Ascolta su Spotify →">Listen on Spotify →</a>
+            <a href="#" class="text-link" data-en="Apple Music →" data-it="Apple Music →">Apple Music →</a>
+            <a href="#" class="text-link" data-en="SoundCloud →" data-it="SoundCloud →">SoundCloud →</a>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <div class="card-image"></div>
-        <h3 data-en="Get In Touch" data-it="Contatti">Get In Touch</h3>
-        <p data-en="Bookings, collaborations and press enquiries welcome." data-it="Disponibile per concerti, collaborazioni e stampa.">Bookings, collaborations and press enquiries welcome.</p>
-        <a href="about.html" class="card-link" data-en="Contact →" data-it="Contatti →">Contact →</a>
+  <!-- 3. BESPOKE -->
+  <section id="bespoke">
+    <div class="bespoke-inner">
+      <p class="section-label" data-en="Commission a piece" data-it="Commissiona un brano">Commission a piece</p>
+      <h2 class="section-title" data-en="Bespoke Music" data-it="Musica Su Misura">Bespoke Music</h2>
+      <div class="divider-line"></div>
+
+      <div class="bespoke-grid">
+        <div class="bespoke-text">
+          <p data-en="A piece of music written just for you — for the moments that deserve something entirely their own."
+             data-it="Un brano scritto apposta per te — per i momenti che meritano qualcosa di completamente unico.">
+            A piece of music written just for you — for the moments that deserve something entirely their own.
+          </p>
+          <p data-en="Each commission begins with a conversation. You share the story; I translate it into music."
+             data-it="Ogni commissione inizia con una conversazione. Tu condividi la storia; io la traduco in musica.">
+            Each commission begins with a conversation. You share the story; I translate it into music.
+          </p>
+
+          <ul class="bespoke-occasions">
+            <li data-en="Weddings &amp; proposals" data-it="Matrimoni &amp; proposte">Weddings &amp; proposals</li>
+            <li data-en="Personal gifts" data-it="Regali personali">Personal gifts</li>
+            <li data-en="Anniversaries &amp; memorials" data-it="Anniversari &amp; commemorazioni">Anniversaries &amp; memorials</li>
+            <li data-en="Special occasions" data-it="Occasioni speciali">Special occasions</li>
+          </ul>
+
+          <a href="#contact" class="bespoke-cta" data-en="Commission a piece" data-it="Commissiona un brano">Commission a piece</a>
+        </div>
+
+        <div class="bespoke-audio">
+          <p class="bespoke-audio-label" data-en="Listen — sample commission" data-it="Ascolta — esempio">Listen — sample commission</p>
+          <div class="audio-placeholder">
+            <!-- Replace with: <audio controls src="assets/audio/sample.mp3"></audio> -->
+            <span data-en="Audio sample coming soon" data-it="Campione audio in arrivo">Audio sample coming soon</span>
+          </div>
+          <p style="font-size:0.75rem;color:var(--muted);line-height:1.7;"
+             data-en="&ldquo;[A short testimonial from a client goes here.]&rdquo;"
+             data-it="&ldquo;[Una breve testimonianza di un cliente va qui.]&rdquo;">
+            &ldquo;[A short testimonial from a client goes here.]&rdquo;
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 4. CREDITS STRIP -->
+  <div id="credits">
+    <div class="credits-inner">
+      <p class="credits-label" data-en="Also composed for" data-it="Ha composto anche per">Also composed for</p>
+      <ul class="credits-list">
+        <li data-en="Theatre" data-it="Teatro">Theatre</li>
+        <li data-en="Film &amp; TV" data-it="Cinema &amp; TV">Film &amp; TV</li>
+        <li data-en="Video Games" data-it="Videogiochi">Video Games</li>
+        <li data-en="[Project name]" data-it="[Nome progetto]">[Project name]</li>
+        <li data-en="[Project name]" data-it="[Nome progetto]">[Project name]</li>
+      </ul>
     </div>
   </div>
 
+  <!-- 5. BIO -->
+  <section id="bio">
+    <div class="section-inner">
+      <p class="section-label" data-en="The Artist" data-it="L'Artista">The Artist</p>
+      <h2 class="section-title" data-en="About" data-it="Chi sono">About</h2>
+      <div class="divider-line"></div>
+
+      <div class="bio-grid">
+        <div class="bio-text">
+          <p data-en="Charly Ponziani is a pianist, singer-songwriter, and composer whose work spans intimate original music, bespoke commissions, and collaborative projects across theatre, film, and beyond."
+             data-it="Charly Ponziani è una pianista, cantautrice e compositrice il cui lavoro spazia dalla musica originale intima, alle commissioni su misura, fino a progetti collaborativi nel teatro, nel cinema e oltre.">
+            Charly Ponziani is a pianist, singer-songwriter, and composer whose work spans intimate original music, bespoke commissions, and collaborative projects across theatre, film, and beyond.
+          </p>
+          <p data-en="Featured on BBC Radio Introducing. [Add more of your story here — where you're from, what drives you, what your sound is really about.]"
+             data-it="Trasmessa su BBC Radio Introducing. [Aggiungi la tua storia qui — da dove vieni, cosa ti spinge, di cosa parla davvero la tua musica.]">
+            Featured on BBC Radio Introducing. [Add more of your story here — where you're from, what drives you, what your sound is really about.]
+          </p>
+          <br />
+          <a href="#" class="text-link" data-en="Download press kit →" data-it="Scarica press kit →">Download press kit →</a>
+        </div>
+        <div class="bio-photo">
+          <!-- <img src="assets/images/press-photo.jpg" alt="Charly Ponziani" /> -->
+          <span data-en="Press photo" data-it="Foto stampa">Press photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label" data-en="Get in touch" data-it="Scrivimi">Get in touch</p>
+      <h2 class="section-title" data-en="Contact" data-it="Contatti">Contact</h2>
+      <div class="divider-line"></div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p data-en="Whether you'd like to commission a piece, book a performance, or simply say hello — I'd love to hear from you."
+             data-it="Che tu voglia commissionare un brano, prenotare un'esibizione, o semplicemente salutarmi — mi farebbe piacere sentirti.">
+            Whether you'd like to commission a piece, book a performance, or simply say hello — I'd love to hear from you.
+          </p>
+          <a href="mailto:hello@charlyponziani.com" class="contact-detail">hello@charlyponziani.com</a>
+          <a href="#" class="contact-detail" target="_blank">Instagram</a>
+          <a href="#" class="contact-detail" target="_blank">Spotify</a>
+        </div>
+
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none"><input name="bot-field" /></p>
+
+          <select name="enquiry">
+            <option value="" disabled selected data-en="Enquiry type" data-it="Tipo di richiesta">Enquiry type</option>
+            <option value="bespoke"     data-en="Bespoke commission"   data-it="Commissione su misura">Bespoke commission</option>
+            <option value="booking"     data-en="Booking / performance" data-it="Prenotazione / esibizione">Booking / performance</option>
+            <option value="press"       data-en="Press / media"         data-it="Stampa / media">Press / media</option>
+            <option value="other"       data-en="Other"                 data-it="Altro">Other</option>
+          </select>
+
+          <input type="text"  name="name"    placeholder="Your name"
+                 data-placeholder-en="Your name" data-placeholder-it="Il tuo nome" required />
+          <input type="email" name="email"   placeholder="Your email"
+                 data-placeholder-en="Your email" data-placeholder-it="La tua email" required />
+          <textarea           name="message" placeholder="Your message..."
+                 data-placeholder-en="Your message..." data-placeholder-it="Il tuo messaggio..." required></textarea>
+          <button type="submit" data-en="Send" data-it="Invia">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <span>© 2026 Charly Ponziani</span>
     <div class="footer-socials">
