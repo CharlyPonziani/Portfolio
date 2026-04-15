@@ -2,6 +2,8 @@
    CHARLY PONZIANI MUSIC
    ============================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&display=swap');
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -11,7 +13,7 @@
   --light:      #cccccc;
   --border:     #e5e5e5;
   --warm:       #d6cfc4;
-  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-serif: 'Didot', 'Didot LT STD', 'GFS Didot', 'Bodoni Moda', 'Bodoni MT', 'Book Antiqua', serif;
   --font-sans:  'Helvetica Neue', 'Arial', sans-serif;
 }
 
