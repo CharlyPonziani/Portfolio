@@ -118,7 +118,7 @@ nav {
   object-position: center 55%;
   display: block;
   /* CSS sharpening — helps a little with compressed images */
-  filter: contrast(1.08) brightness(0.97);
+  filter: grayscale(100%) contrast(1.08) brightness(0.97);
   image-rendering: -webkit-optimize-contrast;
 }
 
