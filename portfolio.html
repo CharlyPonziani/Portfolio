@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Charly Ponziani — Portfolio of compositions and recordings" />
+  <title>Portfolio — Charly Ponziani</title>
+  <link rel="stylesheet" href="style.css?v=4" />
+  <style>
+    .portfolio-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .portfolio-section:first-of-type {
+      border-top: none;
+      padding-top: 4rem;
+    }
+
+    .portfolio-list {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .portfolio-list li {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+
+    .portfolio-title {
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .portfolio-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .portfolio-year {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .portfolio-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+    }
+
+    .portfolio-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-section { padding: 3rem 1.5rem; }
+      .portfolio-list li { grid-template-columns: 1fr 1fr; }
+      .portfolio-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Charly Ponziani Music</a>
+    <ul class="nav-links">
+      <li><a href="index.html#music"   data-en="Music"   data-it="Musica">Music</a></li>
+      <li><a href="index.html#bespoke" data-en="Bespoke" data-it="Su misura">Bespoke</a></li>
+      <li><a href="index.html#bio"     data-en="About"   data-it="Chi sono">About</a></li>
+      <li><a href="index.html#contact" data-en="Contact" data-it="Contatti">Contact</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>/</span>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
+  </nav>
+
+  <div class="page-header" style="margin-top:52px;">
+    <p data-en="Selected works" data-it="Opere selezionate">Selected works</p>
+    <h1 data-en="Portfolio" data-it="Portfolio">Portfolio</h1>
+  </div>
+
+  <!-- VOICE -->
+  <div class="portfolio-section">
+    <p class="section-label" data-en="Voice" data-it="Voce">Voice</p>
+    <ul class="portfolio-list">
+
+      <li>
+        <div>
+          <p class="portfolio-title">Song Title</p>
+          <p class="portfolio-meta" data-en="Original composition — voice & piano" data-it="Composizione originale — voce e pianoforte">Original composition — voice & piano</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <p class="portfolio-title">Song Title</p>
+          <p class="portfolio-meta" data-en="Original composition — voice & piano" data-it="Composizione originale — voce e pianoforte">Original composition — voice & piano</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <p class="portfolio-title">Song Title</p>
+          <p class="portfolio-meta" data-en="Original composition — voice & piano" data-it="Composizione originale — voce e pianoforte">Original composition — voice & piano</p>
+        </div>
+        <span class="portfolio-year">2024</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- PIANO -->
+  <div class="portfolio-section">
+    <p class="section-label" data-en="Piano" data-it="Pianoforte">Piano</p>
+    <p class="portfolio-note" data-en="From the EP — La luce di mezzo" data-it="Dall'EP — La luce di mezzo">From the EP — La luce di mezzo</p>
+    <ul class="portfolio-list">
+
+      <li>
+        <div>
+          <p class="portfolio-title">Aurelia</p>
+          <p class="portfolio-meta" data-en="Solo piano — featured on BBC Radio Introducing" data-it="Pianoforte solo — trasmessa su BBC Radio Introducing">Solo piano — featured on BBC Radio Introducing</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <p class="portfolio-title">Prelude to a Kiss</p>
+          <p class="portfolio-meta" data-en="Solo piano" data-it="Pianoforte solo">Solo piano</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <p class="portfolio-title">Inveramento Parte I</p>
+          <p class="portfolio-meta" data-en="Solo piano" data-it="Pianoforte solo">Solo piano</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <p class="portfolio-title" style="color:var(--muted);font-style:italic;" data-en="Fourth piece — coming soon" data-it="Quarto brano — in arrivo">Fourth piece — coming soon</p>
+          <p class="portfolio-meta" data-en="Solo piano" data-it="Pianoforte solo">Solo piano</p>
+        </div>
+        <span class="portfolio-year">2026</span>
+        <div class="portfolio-links"></div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- FILM -->
+  <div class="portfolio-section">
+    <p class="section-label" data-en="Film" data-it="Cinema">Film</p>
+    <ul class="portfolio-list">
+
+      <li>
+        <div>
+          <p class="portfolio-title">Silent Harmony</p>
+          <p class="portfolio-meta" data-en="Original score — Aurelia · Dir. Illia Todchuck" data-it="Colonna sonora originale — Aurelia · Regia di Illia Todchuck">Original score — Aurelia · Dir. Illia Todchuck</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <p class="portfolio-title">The Night You Left</p>
+          <p class="portfolio-meta" data-en="Original score · Dir. Illia Todchuck" data-it="Colonna sonora originale · Regia di Illia Todchuck">Original score · Dir. Illia Todchuck</p>
+        </div>
+        <span class="portfolio-year">2026</span>
+        <div class="portfolio-links">
+          <span style="font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;" data-en="In progress" data-it="In corso">In progress</span>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <p class="portfolio-title">No Man's Land</p>
+          <p class="portfolio-meta" data-en="Original score — Terra di Nessuno · Dir. Alan McCracken" data-it="Colonna sonora originale — Terra di Nessuno · Regia di Alan McCracken">Original score — Terra di Nessuno · Dir. Alan McCracken</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- THEATRE -->
+  <div class="portfolio-section">
+    <p class="section-label" data-en="Theatre" data-it="Teatro">Theatre</p>
+    <ul class="portfolio-list">
+
+      <li>
+        <div>
+          <p class="portfolio-title">Production Title</p>
+          <p class="portfolio-meta" data-en="Original score" data-it="Musiche originali">Original score</p>
+        </div>
+        <span class="portfolio-year">2025</span>
+        <div class="portfolio-links">
+          <a href="#" class="release-link" data-en="Listen →" data-it="Ascolta →">Listen →</a>
+          <a href="#" class="release-link" data-en="Score →" data-it="Partitura →">Score →</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <footer>
+    <span>© 2026 Charly Ponziani</span>
+    <div class="footer-socials">
+      <a href="https://instagram.com/charlyponziani.music" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Spotify</a>
+      <a href="#" target="_blank">YouTube</a>
+      <a href="https://soundcloud.com/charlyponziani" target="_blank">SoundCloud</a>
+    </div>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>
