@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Charly Ponziani — Pianist, Singer-Songwriter & Composer" />
   <title>Charly Ponziani Music</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
 
@@ -18,18 +18,22 @@
       <li><a href="#bio"         data-en="About"     data-it="Chi sono">About</a></li>
       <li><a href="#contact"     data-en="Contact"   data-it="Contatti">Contact</a></li>
       <li><a href="portfolio.html" data-en="Portfolio" data-it="Portfolio">Portfolio</a></li>
+      <li><a href="gallery.html"   data-en="Gallery"   data-it="Galleria">Gallery</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn" data-lang="en">EN</button>
       <span>/</span>
       <button class="lang-btn" data-lang="it">IT</button>
     </div>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- 1. HERO -->
   <section id="top" class="hero">
     <div class="hero-image-wrap">
-      <img class="hero-photo" src="assets/images/hero.jpg" alt="Charly Ponziani at the piano" />
+      <img class="hero-photo" src="assets/images/hero.jpg?v=2" alt="Charly Ponziani at the piano" />
       <div class="hero-content">
         <div class="hero-badge" data-en="BBC Radio Introducing" data-it="BBC Radio Introducing">BBC Radio Introducing</div>
         <h1 class="hero-name">Charly Ponziani</h1>
@@ -38,6 +42,14 @@
       <a href="#music" class="hero-scroll" data-en="Scroll" data-it="Scorri">Scroll</a>
     </div>
   </section>
+
+  <!-- QUOTE STRIP -->
+  <div class="quote-strip">
+    <div class="quote-inner">
+      <p class="quote-text">&ldquo;It took my breath away when I heard it for the first time.&rdquo;</p>
+      <p class="quote-attr">— Taylor Arthur Johnson, BBC Radio Introducing</p>
+    </div>
+  </div>
 
   <!-- 2. MUSIC -->
   <section id="music">
@@ -48,21 +60,54 @@
 
       <div class="music-feature">
         <div class="music-cover">
-          <!-- <img src="assets/images/release-cover.jpg" alt="Release cover" /> -->
-          <span data-en="Cover art" data-it="Copertina">Cover art</span>
+          <img src="assets/images/ep-cover.jpg" alt="La luce di mezzo — EP cover" />
         </div>
         <div class="music-meta">
-          <p class="section-label" data-en="Latest Release" data-it="Ultimo Lavoro">Latest Release</p>
+          <p class="section-label" data-en="Debut EP" data-it="EP di debutto">Debut EP</p>
           <h3 class="section-title" style="font-size:1.6rem;">La luce di mezzo</h3>
-          <p style="font-size:0.85rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;"
-             data-en="[A line or two about the release — the feeling, the story behind it, what it means to you.]"
-             data-it="[Una o due righe sull'uscita — la sensazione, la storia dietro, cosa significa per te.]">
-            [A line or two about the release — the feeling, the story behind it, what it means to you.]
+          <p style="font-size:0.85rem;color:var(--muted);line-height:2.1;margin-bottom:1.5rem;"
+             data-html-en="a light that does not belong to a place, but to a feeling.<br>somewhere between Italy and Ireland — four piano pieces, entirely mine."
+             data-html-it="una luce che non appartiene a un luogo, ma a un sentimento.<br>tra l'Italia e l'Irlanda — quattro pezzi per pianoforte, interamente miei.">
+            a light that does not belong to a place, but to a feeling.<br>
+            somewhere between Italy and Ireland — four piano pieces, entirely mine.
           </p>
+          <!-- TRACK PREVIEWS -->
+          <div class="track-list">
+            <div class="track-item">
+              <button class="track-play" data-src="assets/audio/Aurelia copy.wav" data-limit="45" aria-label="Play Aurelia">
+                <span class="play-icon">▶</span>
+              </button>
+              <div class="track-info">
+                <span class="track-name">Aurelia</span>
+                <div class="track-progress"><div class="track-bar"></div></div>
+              </div>
+              <span class="track-preview-label" data-en="preview" data-it="anteprima">preview</span>
+            </div>
+            <div class="track-item">
+              <button class="track-play" data-src="assets/audio/Prelude to a kiss copy.wav" data-limit="45" aria-label="Play Prelude to a Kiss">
+                <span class="play-icon">▶</span>
+              </button>
+              <div class="track-info">
+                <span class="track-name">Prelude to a Kiss</span>
+                <div class="track-progress"><div class="track-bar"></div></div>
+              </div>
+              <span class="track-preview-label" data-en="preview" data-it="anteprima">preview</span>
+            </div>
+            <div class="track-item">
+              <button class="track-play" data-src="assets/audio/Inveramento Parte I copy.wav" data-limit="45" aria-label="Play Inveramento Parte I">
+                <span class="play-icon">▶</span>
+              </button>
+              <div class="track-info">
+                <span class="track-name">Inveramento Parte I</span>
+                <div class="track-progress"><div class="track-bar"></div></div>
+              </div>
+              <span class="track-preview-label" data-en="preview" data-it="anteprima">preview</span>
+            </div>
+          </div>
+
           <div class="music-links">
             <a href="#" class="text-link" data-en="Listen on Spotify →" data-it="Ascolta su Spotify →">Listen on Spotify →</a>
             <a href="#" class="text-link" data-en="Apple Music →" data-it="Apple Music →">Apple Music →</a>
-            <a href="https://soundcloud.com/charlyponziani" class="text-link" target="_blank" data-en="SoundCloud →" data-it="SoundCloud →">SoundCloud →</a>
           </div>
         </div>
       </div>
@@ -73,7 +118,7 @@
   <section id="bespoke">
     <div class="bespoke-inner">
       <p class="section-label" data-en="Commission a piece" data-it="Commissiona un brano">Commission a piece</p>
-      <h2 class="section-title" data-en="Bespoke Music" data-it="Musica Su Misura">Bespoke Music</h2>
+      <h2 class="section-title" data-en="Bespoke Music" data-it="Composizione Su Misura">Bespoke Music</h2>
       <div class="divider-line"></div>
 
       <div class="bespoke-grid">
@@ -85,6 +130,10 @@
           <p data-en="Each commission begins with a conversation. You share the story; I translate it into music."
              data-it="Ogni commissione inizia con una conversazione. Tu condividi la storia; io la traduco in musica.">
             Each commission begins with a conversation. You share the story; I translate it into music.
+          </p>
+          <p data-en="Each piece is written for piano — solo, or set against an orchestral arrangement — intimate by nature, cinematic when it calls for it."
+             data-it="Ogni brano è scritto per pianoforte — solo, o con un arrangiamento orchestrale — intimo per natura, cinematografico quando lo richiede.">
+            Each piece is written for piano — solo, or set against an orchestral arrangement — intimate by nature, cinematic when it calls for it.
           </p>
 
           <ul class="bespoke-occasions">
@@ -119,10 +168,8 @@
       <p class="credits-label" data-en="Also composed for" data-it="Ha composto anche per">Also composed for</p>
       <ul class="credits-list">
         <li data-en="Theatre" data-it="Teatro">Theatre</li>
-        <li data-en="Film &amp; TV" data-it="Cinema &amp; TV">Film &amp; TV</li>
+        <li data-en="Film" data-it="Cinema">Film</li>
         <li data-en="Video Games" data-it="Videogiochi">Video Games</li>
-        <li data-en="[Project name]" data-it="[Nome progetto]">[Project name]</li>
-        <li data-en="[Project name]" data-it="[Nome progetto]">[Project name]</li>
       </ul>
     </div>
   </div>
@@ -136,20 +183,21 @@
 
       <div class="bio-grid">
         <div class="bio-text">
-          <p data-en="Charly Ponziani grew up between Italy and Northern Ireland, moved through France, England, Spain and eventually Belfast — and it was there, far from where she started, that she began to compose."
-             data-it="Charly Ponziani è cresciuta tra l'Italia e l'Irlanda del Nord, ha vissuto in Francia, Inghilterra, Spagna e infine Belfast — ed è lì, lontana da dove tutto era cominciato, che ha iniziato a comporre.">
-            Charly Ponziani grew up between Italy and Northern Ireland, moved through France, England, Spain and eventually Belfast — and it was there, far from where she started, that she began to compose.
+          <p data-en="Charly Ponziani grew up between Italy and Northern Ireland, and later lived in France, England, Spain, and Belfast. It was in Belfast, away from where she started, that she began to write her own music."
+             data-it="Charly Ponziani è cresciuta tra l'Italia e l'Irlanda del Nord, e ha vissuto in Francia, Inghilterra, Spagna e Belfast. È stata a Belfast, lontana da dove tutto è iniziato, che ha cominciato a scrivere la sua musica.">
+            Charly Ponziani grew up between Italy and Northern Ireland, and later lived in France, England, Spain, and Belfast. It was in Belfast, away from where she started, that she began to write her own music.
           </p>
-          <p data-en="Pianist, vocalist and maker of intimate, cinematic music. Her compositions begin with emotion and end there too — every note chosen not just to sound beautiful, but to feel like something. Something personal, something intentional, something that stays. Music had always lived in her family; Belfast was where it became her own. Her composition Aurelia was recently featured on BBC Radio Introducing. Bilingual in Italian and English, fluent in Spanish, she is now based in Milan."
-             data-it="Pianista, vocalist e creatrice di musica intima e cinematografica. Le sue composizioni nascono dall'emozione e lì finiscono — ogni nota scelta non solo per suonare bella, ma per far sentire qualcosa. Qualcosa di personale, di intenzionale, qualcosa che rimane. La musica era sempre vissuta nella sua famiglia; Belfast è stato il luogo in cui è diventata la sua. La sua composizione Aurelia è stata recentemente trasmessa su BBC Radio Introducing. Bilingue in italiano e inglese, fluente in spagnolo, è ora basata a Milano.">
-            Pianist, vocalist and maker of intimate, cinematic music. Her compositions begin with emotion and end there too — every note chosen not just to sound beautiful, but to feel like something. Something personal, something intentional, something that stays. Music had always lived in her family; Belfast was where it became her own. Her composition Aurelia was recently featured on BBC Radio Introducing. Bilingual in Italian and English, fluent in Spanish, she is now based in Milan.
+          <p data-en="She is a pianist, vocalist, and performer, creating intimate, cinematic work. Alongside composing, she sings and performs, with a particular focus on the wedding industry, where music plays a deeply personal role. Her vocal style is rooted in jazz, soul, and blues, and she also enjoys exploring other genres, including electronic music, where she has collaborated as a vocalist."
+             data-it="È pianista, vocalist e performer, creatrice di musica intima e cinematografica. Oltre a comporre, canta e si esibisce, con un focus particolare sul settore matrimoniale, dove la musica ha un ruolo profondamente personale. Il suo stile vocale è radicato nel jazz, soul e blues, e ama esplorare altri generi, tra cui la musica elettronica, in cui ha collaborato come vocalist.">
+            She is a pianist, vocalist, and performer, creating intimate, cinematic work. Alongside composing, she sings and performs, with a particular focus on the wedding industry, where music plays a deeply personal role. Her vocal style is rooted in jazz, soul, and blues, and she also enjoys exploring other genres, including electronic music, where she has collaborated as a vocalist.
           </p>
-          <br />
-          <a href="#" class="text-link" data-en="Download press kit →" data-it="Scarica press kit →">Download press kit →</a>
+          <p data-en="Music was always part of her life, but it was in Belfast that it became her own. Her composition Aurelia was featured on BBC Introducing. She works in both Italian and English, with Spanish as an additional language. She is now based in Milan."
+             data-it="La musica è sempre stata parte della sua vita, ma è stata a Belfast che è diventata la sua. La sua composizione Aurelia è stata trasmessa su BBC Introducing. Lavora sia in italiano che in inglese, con lo spagnolo come lingua aggiuntiva. È ora basata a Milano.">
+            Music was always part of her life, but it was in Belfast that it became her own. Her composition Aurelia was featured on BBC Introducing. She works in both Italian and English, with Spanish as an additional language. She is now based in Milan.
+          </p>
         </div>
         <div class="bio-photo">
-          <!-- <img src="assets/images/press-photo.jpg" alt="Charly Ponziani" /> -->
-          <span data-en="Press photo" data-it="Foto stampa">Press photo</span>
+          <img src="assets/images/press-photo.jpg?v=1" alt="Charly Ponziani" />
         </div>
       </div>
     </div>
@@ -164,13 +212,12 @@
 
       <div class="contact-grid">
         <div class="contact-info">
-          <p data-en="Whether you'd like to commission a piece, book a performance, or simply say hello — I'd love to hear from you."
-             data-it="Che tu voglia commissionare un brano, prenotare un'esibizione, o semplicemente salutarmi — mi farebbe piacere sentirti.">
-            Whether you'd like to commission a piece, book a performance, or simply say hello — I'd love to hear from you.
+          <p data-en="Whether you'd like to commission a piece, book a performance, explore a collaboration, or simply say hello — I'd love to hear from you."
+             data-it="Che tu voglia commissionare un brano, prenotare un'esibizione, esplorare una collaborazione, o semplicemente salutarmi — mi farebbe piacere sentirti.">
+            Whether you'd like to commission a piece, book a performance, explore a collaboration, or simply say hello — I'd love to hear from you.
           </p>
-          <a href="mailto:charlyponziani.music@gmail.com" class="contact-detail">charlyponziani.music@gmail.com</a>
+          <a href="mailto:hello@charlyponziani.com" class="contact-detail">hello@charlyponziani.com</a>
           <a href="https://instagram.com/charlyponziani.music" class="contact-detail" target="_blank">Instagram</a>
-          <a href="https://soundcloud.com/charlyponziani" class="contact-detail" target="_blank">SoundCloud</a>
         </div>
 
         <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -179,10 +226,10 @@
 
           <select name="enquiry">
             <option value="" disabled selected data-en="Enquiry type" data-it="Tipo di richiesta">Enquiry type</option>
-            <option value="bespoke"     data-en="Bespoke commission"   data-it="Commissione su misura">Bespoke commission</option>
-            <option value="booking"     data-en="Booking / performance" data-it="Prenotazione / esibizione">Booking / performance</option>
-            <option value="press"       data-en="Press / media"         data-it="Stampa / media">Press / media</option>
-            <option value="other"       data-en="Other"                 data-it="Altro">Other</option>
+            <option value="bespoke"       data-en="Bespoke commission"    data-it="Commissione su misura">Bespoke commission</option>
+            <option value="booking"       data-en="Booking / performance" data-it="Prenotazione / esibizione">Booking / performance</option>
+            <option value="collaboration" data-en="Collaboration"         data-it="Collaborazione">Collaboration</option>
+            <option value="other"         data-en="Other"                 data-it="Altro">Other</option>
           </select>
 
           <input type="text"  name="name"    placeholder="Your name"
@@ -204,10 +251,66 @@
       <a href="https://instagram.com/charlyponziani.music" target="_blank">Instagram</a>
       <a href="#" target="_blank">Spotify</a>
       <a href="#" target="_blank">YouTube</a>
-      <a href="https://soundcloud.com/charlyponziani" target="_blank">SoundCloud</a>
     </div>
   </footer>
 
-  <script src="lang.js"></script>
+  <script src="lang.js?v=2"></script>
+  <script>
+    (function () {
+      let currentAudio = null;
+      let currentBtn = null;
+
+      document.querySelectorAll('.track-play').forEach(btn => {
+        const src = btn.dataset.src;
+        const limit = parseFloat(btn.dataset.limit) || 45;
+        const bar = btn.closest('.track-item').querySelector('.track-bar');
+        let audio = null;
+        let ticker = null;
+
+        function stop() {
+          if (audio) { audio.pause(); audio.currentTime = 0; }
+          clearInterval(ticker);
+          bar.style.width = '0%';
+          btn.classList.remove('playing');
+          btn.querySelector('.play-icon').textContent = '▶';
+        }
+
+        function play() {
+          if (!audio) { audio = new Audio(src); }
+          audio.currentTime = 0;
+          audio.play();
+          btn.classList.add('playing');
+          btn.querySelector('.play-icon').textContent = '■';
+          ticker = setInterval(() => {
+            const pct = Math.min(audio.currentTime / limit, 1) * 100;
+            bar.style.width = pct + '%';
+            if (audio.currentTime >= limit) { stop(); }
+          }, 200);
+        }
+
+        btn.addEventListener('click', () => {
+          if (currentAudio && currentAudio !== audio) {
+            currentBtn && currentBtn.click && stop.call({ audio: currentAudio, btn: currentBtn, bar: currentBtn.closest('.track-item').querySelector('.track-bar') });
+            // stop previous
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentBtn.classList.remove('playing');
+            currentBtn.querySelector('.play-icon').textContent = '▶';
+            currentBtn.closest('.track-item').querySelector('.track-bar').style.width = '0%';
+          }
+
+          if (btn.classList.contains('playing')) {
+            stop();
+            currentAudio = null;
+            currentBtn = null;
+          } else {
+            play();
+            currentAudio = audio;
+            currentBtn = btn;
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

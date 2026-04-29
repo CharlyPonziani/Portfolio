@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Charly Ponziani — Gallery" />
+  <title>Gallery — Charly Ponziani</title>
+  <link rel="stylesheet" href="style.css?v=6" />
+  <style>
+    .gallery-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .gallery-section:first-of-type { border-top: none; }
+
+    .gallery-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: #1e1e1e;
+    }
+
+    .gallery-item img {
+      aspect-ratio: 4/3;
+      object-position: center 28%;
+    }
+
+    .gallery-item video {
+      aspect-ratio: 16/9;
+    }
+
+    .gallery-item.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-caption {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-section { padding: 3rem 1.5rem; }
+      .gallery-grid-2,
+      .gallery-grid-3 { grid-template-columns: 1fr; }
+      .gallery-item.full-width { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Charly Ponziani Music</a>
+    <ul class="nav-links">
+      <li><a href="index.html#music"    data-en="Music"     data-it="Musica">Music</a></li>
+      <li><a href="index.html#bespoke"  data-en="Bespoke"   data-it="Su misura">Bespoke</a></li>
+      <li><a href="index.html#bio"      data-en="About"     data-it="Chi sono">About</a></li>
+      <li><a href="index.html#contact"  data-en="Contact"   data-it="Contatti">Contact</a></li>
+      <li><a href="portfolio.html"      data-en="Portfolio" data-it="Portfolio">Portfolio</a></li>
+      <li><a href="gallery.html"        data-en="Gallery"   data-it="Galleria">Gallery</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>/</span>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header" style="margin-top:52px;">
+    <p data-en="Photos & Video" data-it="Foto & Video">Photos & Video</p>
+    <h1 data-en="Gallery" data-it="Galleria">Gallery</h1>
+  </div>
+
+  <!-- WEDDINGS -->
+  <div class="gallery-section">
+    <p class="section-label" data-en="Weddings" data-it="Matrimoni">Weddings</p>
+    <div class="gallery-grid-2">
+
+      <div class="gallery-item">
+        <video controls preload="none">
+          <source src="assets/gallery/wedding1.mov" type="video/mp4">
+        </video>
+        <p class="gallery-caption">Carmen & Massimiliano — Wedding, Italy 2025</p>
+      </div>
+
+      <div class="gallery-item">
+        <video controls preload="none">
+          <source src="assets/gallery/wedding2.mov" type="video/mp4">
+        </video>
+        <p class="gallery-caption">Carmen & Massimiliano — Wedding, Italy 2025</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LIVE & CONCERTS -->
+  <div class="gallery-section">
+    <p class="section-label" data-en="Live & Concerts" data-it="Dal vivo & Concerti">Live & Concerts</p>
+    <div class="gallery-grid-2">
+
+      <div class="gallery-item full-width">
+        <img src="assets/gallery/blackbox.jpg" alt="Royal Television Society Awards Belfast 2025" style="object-position: center 38%;" />
+        <p class="gallery-caption">Royal Television Society Awards, Belfast, 2025</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/gallery/rts-belfast.jpg" alt="Royal Television Society Awards Belfast 2026" />
+        <p class="gallery-caption">Royal Television Society Awards, Belfast, 2026</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/gallery/rts3.jpg" alt="Royal Television Society Awards Belfast 2026" />
+        <p class="gallery-caption">Royal Television Society Awards, Belfast, 2026</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STUDIO & RECORDING -->
+  <div class="gallery-section">
+    <p class="section-label" data-en="Studio & Recording" data-it="Studio & Registrazione">Studio & Recording</p>
+    <div class="gallery-grid-3">
+
+      <div class="gallery-item">
+        <img src="assets/gallery/studio1.jpg" alt="Studio recording" />
+        <p class="gallery-caption">Studio session, 2025</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/gallery/studio3.jpg" alt="Studio recording" style="object-position: center 30%; aspect-ratio: 4/5;" />
+        <p class="gallery-caption">Studio session, 2025</p>
+      </div>
+
+
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Charly Ponziani</span>
+    <div class="footer-socials">
+      <a href="https://instagram.com/charlyponziani.music" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Spotify</a>
+      <a href="#" target="_blank">YouTube</a>
+    </div>
+  </footer>
+
+  <script src="lang.js?v=2"></script>
+</body>
+</html>

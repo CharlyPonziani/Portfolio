@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Charly Ponziani — Portfolio of compositions and recordings" />
   <title>Portfolio — Charly Ponziani</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=6" />
   <style>
     .portfolio-section {
       max-width: 860px;
@@ -64,10 +64,45 @@
       font-style: italic;
     }
 
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #1e1e1e;
+    }
+
+    .gallery-item img {
+      aspect-ratio: 3/2;
+      object-position: center 28%;
+    }
+
+    .gallery-caption {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
     @media (max-width: 768px) {
       .portfolio-section { padding: 3rem 1.5rem; }
       .portfolio-list li { grid-template-columns: 1fr 1fr; }
       .portfolio-links { justify-content: flex-start; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: 1; }
     }
   </style>
 </head>
@@ -76,16 +111,21 @@
   <nav>
     <a href="index.html" class="nav-logo">Charly Ponziani Music</a>
     <ul class="nav-links">
-      <li><a href="index.html#music"   data-en="Music"   data-it="Musica">Music</a></li>
-      <li><a href="index.html#bespoke" data-en="Bespoke" data-it="Su misura">Bespoke</a></li>
-      <li><a href="index.html#bio"     data-en="About"   data-it="Chi sono">About</a></li>
-      <li><a href="index.html#contact" data-en="Contact" data-it="Contatti">Contact</a></li>
+      <li><a href="index.html#music"   data-en="Music"     data-it="Musica">Music</a></li>
+      <li><a href="index.html#bespoke" data-en="Bespoke"   data-it="Su misura">Bespoke</a></li>
+      <li><a href="index.html#bio"     data-en="About"     data-it="Chi sono">About</a></li>
+      <li><a href="index.html#contact" data-en="Contact"   data-it="Contatti">Contact</a></li>
+      <li><a href="portfolio.html"     data-en="Portfolio" data-it="Portfolio">Portfolio</a></li>
+      <li><a href="gallery.html"       data-en="Gallery"   data-it="Galleria">Gallery</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn" data-lang="en">EN</button>
       <span>/</span>
       <button class="lang-btn" data-lang="it">IT</button>
     </div>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <div class="page-header" style="margin-top:52px;">
@@ -246,6 +286,34 @@
     </ul>
   </div>
 
+  <!-- GALLERY -->
+  <div class="portfolio-section">
+    <p class="section-label" data-en="Live & Performances" data-it="Dal vivo & Esibizioni">Live & Performances</p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="assets/gallery/blackbox.jpg" alt="Black Box concert 2025" />
+        <p class="gallery-caption">Black Box, Belfast — 2025</p>
+      </div>
+
+      <div class="gallery-item">
+        <video controls preload="none" poster="">
+          <source src="assets/gallery/wedding1.mov" type="video/mp4">
+        </video>
+        <p class="gallery-caption">Carmen & Massimiliano — Wedding, Italy 2025</p>
+      </div>
+
+      <div class="gallery-item">
+        <video controls preload="none" poster="">
+          <source src="assets/gallery/wedding2.mov" type="video/mp4">
+        </video>
+        <p class="gallery-caption">Carmen & Massimiliano — Wedding, Italy 2025</p>
+      </div>
+
+    </div>
+  </div>
+
   <footer>
     <span>© 2026 Charly Ponziani</span>
     <div class="footer-socials">
@@ -256,6 +324,6 @@
     </div>
   </footer>
 
-  <script src="lang.js"></script>
+  <script src="lang.js?v=2"></script>
 </body>
 </html>

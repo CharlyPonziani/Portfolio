@@ -48,3 +48,31 @@
     init();
   }
 })();
+
+// Hamburger menu
+(function () {
+  function initHamburger() {
+    const btn = document.querySelector('.nav-hamburger');
+    const links = document.querySelector('.nav-links');
+    if (!btn || !links) return;
+
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+
+    // Close when a link is clicked
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHamburger);
+  } else {
+    initHamburger();
+  }
+})();
