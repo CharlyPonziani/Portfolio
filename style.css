@@ -108,6 +108,13 @@ nav {
 .lang-btn.active { color: var(--text); font-weight: 600; }
 .lang-btn:hover { color: var(--text); }
 
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
 .theme-toggle {
   background: none;
   border: none;
