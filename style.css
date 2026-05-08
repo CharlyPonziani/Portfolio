@@ -13,8 +13,19 @@
   --light:      #bbbbbb;
   --border:     #e5e5e5;
   --warm:       #d6cfc4;
+  --nav-bg:     rgba(255,255,255,0.96);
   --font-serif: 'Didot', 'Didot LT STD', 'GFS Didot', 'Bodoni Moda', 'Bodoni MT', 'Book Antiqua', serif;
   --font-sans:  'Helvetica Neue', 'Arial', sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg:         #1c1c1c;
+  --text:       #e8e4de;
+  --muted:      #b0aba3;
+  --light:      #555555;
+  --border:     #2e2e2e;
+  --warm:       #2e2e2e;
+  --nav-bg:     rgba(28,28,28,0.96);
 }
 
 html { scroll-behavior: smooth; }
@@ -40,7 +51,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.1rem 3rem;
-  background: rgba(255,255,255,0.96);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--border);
   gap: 2rem;
 }
@@ -96,6 +107,28 @@ nav {
 
 .lang-btn.active { color: var(--text); font-weight: 600; }
 .lang-btn:hover { color: var(--text); }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.theme-toggle:hover { color: var(--text); }
+
+/* Smooth colour transitions across the whole page */
+body, nav, footer, section, .bio-photo, .music-list,
+.track-row, .contact-form input, .contact-form textarea,
+.quote-section, .credits-inner {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 
 /* ---- HERO ---- */
 .hero {
@@ -369,7 +402,7 @@ nav {
 
 /* ---- BESPOKE SECTION ---- */
 #bespoke {
-  background: #faf8f5;
+  background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -424,7 +457,7 @@ nav {
 .bespoke-cta:hover { background: var(--text); color: var(--bg); }
 
 .bespoke-audio {
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--border);
   padding: 2rem;
   display: flex;
@@ -442,7 +475,7 @@ nav {
 .audio-placeholder {
   width: 100%;
   height: 64px;
-  background: #f0ede8;
+  background: var(--border);
   border: 1px dashed var(--border);
   display: flex;
   align-items: center;
@@ -499,7 +532,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  align-items: start;
+  align-items: center;
 }
 
 .bio-text p {

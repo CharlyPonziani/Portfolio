@@ -49,6 +49,42 @@
   }
 })();
 
+// Dark / Light mode toggle
+(function () {
+  const STORAGE_KEY = 'cp-theme';
+
+  function getTheme() {
+    return localStorage.getItem(STORAGE_KEY) || 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : '');
+    localStorage.setItem(STORAGE_KEY, theme);
+    // Update icon
+    document.querySelectorAll('.theme-icon').forEach(el => {
+      el.textContent = theme === 'dark' ? '○' : '◐';
+    });
+  }
+
+  function initTheme() {
+    const theme = getTheme();
+    applyTheme(theme);
+
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const current = getTheme();
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+})();
+
 // Hamburger menu
 (function () {
   function initHamburger() {
