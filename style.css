@@ -157,7 +157,7 @@ body, nav, footer, section, .bio-photo, .music-list,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 25%;
   display: block;
   /* CSS sharpening — helps a little with compressed images */
   filter: grayscale(100%) contrast(1.08) brightness(0.97);
