@@ -223,7 +223,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 .section-inner {
   max-width: 860px;
   margin: 0 auto;
-  padding: 6rem 3rem;
+  padding: 4rem 3rem 6rem;
 }
 
 .section-label {
