@@ -166,9 +166,9 @@
 (function () {
   function smoothScrollTo(target, duration) {
     const start = window.scrollY;
-    // Aim at first content child inside sections (skips large top padding)
-    const landmark = target.querySelector('.section-label, .section-title, h1, h2') || target;
-    const end = landmark.getBoundingClientRect().top + window.scrollY - 80; // 52px nav + 28px breathing room
+    // Aim at section title to skip top padding and land with content visible
+    const landmark = target.querySelector('.section-title, h1, h2, .section-label') || target;
+    const end = landmark.getBoundingClientRect().top + window.scrollY - 64; // 52px nav + 12px breathing room
     const distance = end - start;
     let startTime = null;
 
