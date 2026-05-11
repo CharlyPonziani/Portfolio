@@ -245,7 +245,7 @@ body, nav, footer, section, .bio-photo, .music-list,
   width: 32px;
   height: 1px;
   background: var(--warm);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .text-link {
