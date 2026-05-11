@@ -166,7 +166,9 @@
 (function () {
   function smoothScrollTo(target, duration) {
     const start = window.scrollY;
-    const end = target.getBoundingClientRect().top + window.scrollY - 52; // offset for fixed nav
+    // Aim at first content child inside sections (skips large top padding)
+    const landmark = target.querySelector('.section-label, .section-title, h1, h2') || target;
+    const end = landmark.getBoundingClientRect().top + window.scrollY - 80; // 52px nav + 28px breathing room
     const distance = end - start;
     let startTime = null;
 
