@@ -112,3 +112,51 @@
     initHamburger();
   }
 })();
+
+// Smooth scroll — slower, more natural feel
+(function () {
+  function smoothScrollTo(target, duration) {
+    const start = window.scrollY;
+    const end = target.getBoundingClientRect().top + window.scrollY - 52; // offset for fixed nav
+    const distance = end - start;
+    let startTime = null;
+
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, start + distance * easeInOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href*="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) return;
+        const id = href.slice(hashIndex + 1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        // Only intercept same-page or same-file anchors
+        const path = href.slice(0, hashIndex);
+        if (path && !window.location.pathname.endsWith(path.replace(/^.*\//, ''))) return;
+        e.preventDefault();
+        smoothScrollTo(target, 900); // 900ms — adjust here to taste
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSmoothScroll);
+  } else {
+    initSmoothScroll();
+  }
+})();
