@@ -141,14 +141,13 @@ body, nav, footer, section, .bio-photo, .music-list,
 .hero {
   margin-top: 52px;
   width: 100%;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hero-image-wrap {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 78vh;
+  min-height: 480px;
+  max-height: 860px;
   overflow: hidden;
   position: relative;
   background: var(--bg);
@@ -158,7 +157,7 @@ body, nav, footer, section, .bio-photo, .music-list,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 58%;
   display: block;
   /* CSS sharpening — helps a little with compressed images */
   filter: grayscale(100%) contrast(1.08) brightness(0.97);
