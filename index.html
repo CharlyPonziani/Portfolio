@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Charly Ponziani — Pianist, Singer-Songwriter & Composer" />
   <title>Charly Ponziani Music</title>
-  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="stylesheet" href="style.css?v=17" />
 </head>
 <body>
 
@@ -225,7 +225,7 @@
           <a href="https://instagram.com/charlyponziani.music" class="contact-detail" target="_blank">Instagram</a>
         </div>
 
-        <form class="contact-form" action="https://formspree.io/f/xkoykpqz" method="POST">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xkoykpqz" method="POST">
 
           <select name="enquiry">
             <option value="" disabled selected data-en="Enquiry type" data-it="Tipo di richiesta">Enquiry type</option>
@@ -242,6 +242,10 @@
           <textarea           name="message" placeholder="Your message..."
                  data-placeholder-en="Your message..." data-placeholder-it="Il tuo messaggio..." required></textarea>
           <button type="submit" data-en="Send" data-it="Invia">Send</button>
+
+          <div class="form-success" id="form-success" style="display:none;">
+            <p class="form-success-msg" data-en="Thank you — I'll be in touch soon." data-it="Grazie — ti risponderò presto.">Thank you — I'll be in touch soon.</p>
+          </div>
         </form>
       </div>
     </div>
@@ -257,7 +261,7 @@
     </div>
   </footer>
 
-  <script src="lang.js?v=4"></script>
+  <script src="lang.js?v=5"></script>
   <script>
     (function () {
       let currentAudio = null;

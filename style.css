@@ -639,6 +639,25 @@ body, nav, footer, section, .bio-photo, .music-list,
 
 .contact-form button:hover { background: var(--text); color: var(--bg); }
 
+.contact-form button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.form-success {
+  padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
+
+.form-success-msg {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* ---- FOOTER ---- */
 footer {
   border-top: 1px solid var(--border);

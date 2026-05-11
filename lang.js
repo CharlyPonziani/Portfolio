@@ -113,6 +113,55 @@
   }
 })();
 
+// Contact form — async submit (stay on page, show inline confirmation)
+(function () {
+  function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    const success = document.getElementById('form-success');
+    const btn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          // Hide fields, show confirmation
+          Array.from(form.elements).forEach(el => {
+            if (el !== btn) el.style.display = 'none';
+          });
+          btn.style.display = 'none';
+          success.style.display = 'block';
+          // Re-apply language to new element
+          const lang = localStorage.getItem('cp-lang') || 'en';
+          success.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = lang === 'it' ? el.dataset.it : el.dataset.en;
+          });
+        } else {
+          btn.disabled = false;
+          alert('Something went wrong — please try again or email directly.');
+        }
+      } catch {
+        btn.disabled = false;
+        alert('Something went wrong — please try again or email directly.');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactForm);
+  } else {
+    initContactForm();
+  }
+})();
+
 // Smooth scroll — slower, more natural feel
 (function () {
   function smoothScrollTo(target, duration) {
