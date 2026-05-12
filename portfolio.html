@@ -163,45 +163,6 @@
       color: rgba(255,255,255,0.6);
     }
 
-    /* Modal */
-    .video-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,0.92);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-modal.open { display: flex; }
-
-    .video-modal-inner {
-      position: relative;
-      width: 50vw;
-      max-width: 560px;
-    }
-
-    .video-modal-inner video {
-      width: 100%;
-      display: block;
-    }
-
-    .video-modal-close {
-      position: absolute;
-      top: -2.5rem;
-      right: 0;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-family: var(--font-sans);
-    }
-
-    .video-modal-close:hover { color: #fff; }
   </style>
 </head>
 <body>
@@ -395,28 +356,18 @@
     <div class="gallery-grid" style="margin-top: 2rem;">
 
       <div class="gallery-item">
-        <div class="video-card" onclick="document.getElementById('video-modal').classList.add('open')">
+        <div class="video-card" id="studio-card" onclick="this.querySelector('.video-card-thumb').style.display='none'; this.querySelector('.video-card-overlay').style.display='none'; this.querySelector('video').style.display='block'; this.querySelector('video').play();">
           <img class="video-card-thumb" src="assets/gallery/charly-gregory-poster.jpg" alt="Charly Ponziani & Gregory Ferguson studio session" />
           <div class="video-card-overlay">
             <div class="video-play-btn"></div>
             <span class="video-card-label" data-en="Play" data-it="Riproduci">Play</span>
           </div>
+          <video preload="none" controls style="display:none;width:100%;aspect-ratio:16/9;object-fit:cover;background:#1e1e1e;">
+            <source src="assets/gallery/charly-gregory-2.mp4" type="video/mp4">
+          </video>
         </div>
         <p class="gallery-caption">Charly Ponziani & Gregory Ferguson — Studio session, 2025</p>
       </div>
-
-    </div>
-  </div>
-
-  <!-- VIDEO MODAL -->
-  <div class="video-modal" id="video-modal" onclick="this.classList.remove('open'); this.querySelector('video').pause();">
-    <div class="video-modal-inner" onclick="event.stopPropagation()">
-      <button class="video-modal-close" onclick="document.getElementById('video-modal').classList.remove('open'); document.querySelector('#video-modal video').pause();" data-en="Close ×" data-it="Chiudi ×">Close ×</button>
-      <video controls preload="none">
-        <source src="assets/gallery/charly-gregory-2.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
 
   <!-- PRESS -->
   <div class="portfolio-section">
