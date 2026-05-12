@@ -242,10 +242,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 }
 
 .divider-line {
-  width: 32px;
-  height: 1px;
-  background: var(--warm);
-  margin-bottom: 1rem;
+  display: none;
 }
 
 .text-link {
