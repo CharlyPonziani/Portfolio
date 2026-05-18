@@ -273,6 +273,9 @@
     </div>
   </section>
 
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" style="display:none;position:fixed;bottom:2rem;right:2rem;width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:var(--bg);color:var(--muted);font-size:0.75rem;cursor:pointer;z-index:999;transition:opacity 0.3s,transform 0.3s;letter-spacing:0;">↑</button>
+
   <!-- FOOTER -->
   <footer>
     <span>© 2026 Charly Ponziani. All rights reserved.</span>
@@ -284,6 +287,18 @@
   </footer>
 
   <script src="lang.js?v=8"></script>
+  <script>
+    (function () {
+      const btn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          btn.style.display = 'block';
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+    })();
+  </script>
   <script>
     (function () {
       let currentAudio = null;
