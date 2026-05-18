@@ -211,3 +211,22 @@
     initSmoothScroll();
   }
 })();
+
+// Exclusive audio — pause all others when one starts playing
+(function () {
+  function initExclusiveAudio() {
+    document.querySelectorAll('audio').forEach(audio => {
+      audio.addEventListener('play', () => {
+        document.querySelectorAll('audio').forEach(other => {
+          if (other !== audio) other.pause();
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initExclusiveAudio);
+  } else {
+    initExclusiveAudio();
+  }
+})();
