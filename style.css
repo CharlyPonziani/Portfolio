@@ -667,17 +667,22 @@ footer {
   letter-spacing: 0.08em;
 }
 
-.footer-socials { display: flex; gap: 1.5rem; }
+.footer-socials { display: flex; gap: 1.25rem; align-items: center; }
 
 .footer-socials a {
   color: var(--muted);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
   transition: color 0.2s;
 }
 
 .footer-socials a:hover { color: var(--text); }
+
+.footer-socials svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
 
 /* ---- INNER PAGES ---- */
 .page-header {
