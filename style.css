@@ -531,16 +531,22 @@ body, nav, footer, section, .bio-photo, .music-list,
 
 .bio-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.bio-text {
+  column-count: 2;
+  column-gap: 2rem;
 }
 
 .bio-text p {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.9;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  break-inside: avoid;
 }
 
 .bio-photo {
@@ -811,6 +817,8 @@ footer {
   .bespoke-grid,
   .bio-grid,
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .bio-text { column-count: 1; }
 
   .credits-inner { padding: 2.5rem 1.5rem; flex-direction: column; gap: 1rem; }
 
