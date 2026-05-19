@@ -229,6 +229,9 @@ body, nav, footer, section, .bio-photo, .music-list,
   flex-direction: column;
   gap: 0.5rem;
   text-align: right;
+  background: rgba(0,0,0,0.25);
+  padding: 0.6rem 0.9rem;
+  backdrop-filter: blur(2px);
 }
 
 .hero-overlay-tagline {
