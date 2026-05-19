@@ -529,16 +529,13 @@ body, nav, footer, section, .bio-photo, .music-list,
 /* ---- BIO SECTION ---- */
 #bio { border-top: 1px solid var(--border); }
 
+#bio .section-inner { max-width: 980px; }
+
 .bio-grid {
   display: grid;
-  grid-template-columns: 1.7fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 260px;
+  gap: 4rem;
   align-items: start;
-}
-
-.bio-text {
-  column-count: 2;
-  column-gap: 2rem;
 }
 
 .bio-text p {
@@ -546,7 +543,6 @@ body, nav, footer, section, .bio-photo, .music-list,
   color: var(--muted);
   line-height: 1.9;
   margin-bottom: 0.75rem;
-  break-inside: avoid;
 }
 
 .bio-photo {
@@ -818,7 +814,6 @@ footer {
   .bio-grid,
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
-  .bio-text { column-count: 1; }
 
   .credits-inner { padding: 2.5rem 1.5rem; flex-direction: column; gap: 1rem; }
 
