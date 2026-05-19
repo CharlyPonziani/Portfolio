@@ -6,7 +6,16 @@
   <meta name="description" content="Charly Ponziani — Pianist, Singer-Songwriter & Composer" />
   <title>Charly Ponziani Music</title>
   <link rel="stylesheet" href="style.css?v=24" />
-  <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('DOMContentLoaded', function () {
+      const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+      if (isReload) {
+        history.replaceState(null, null, window.location.pathname);
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
 </head>
 <body>
 
