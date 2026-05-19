@@ -223,7 +223,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 .hero-overlay-text {
   position: absolute;
   bottom: 30%;
-  right: 3rem;
+  right: 4.5rem;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -235,17 +235,17 @@ body, nav, footer, section, .bio-photo, .music-list,
   font-size: 0.62rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.95);
+  color: rgba(255,255,255,1);
   font-weight: 400;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 12px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.9);
 }
 
 .hero-overlay-bbc {
   font-size: 0.55rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  text-shadow: 0 1px 10px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6);
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 12px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.9);
 }
 
 /* ---- SHARED ---- */
