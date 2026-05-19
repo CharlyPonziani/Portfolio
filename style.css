@@ -222,7 +222,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 
 .hero-overlay-text {
   position: absolute;
-  bottom: 23%;
+  bottom: 21%;
   right: 5.5rem;
   z-index: 2;
   display: flex;
@@ -232,7 +232,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 }
 
 .hero-overlay-tagline {
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: rgba(255,255,255,1);
@@ -241,7 +241,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 }
 
 .hero-overlay-bbc {
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,1);
