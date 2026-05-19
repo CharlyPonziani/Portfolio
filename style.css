@@ -849,4 +849,13 @@ footer {
   .music-list li { grid-template-columns: 1fr 1fr; gap: 0.25rem; }
 
   footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+
+  .hero-overlay-text {
+    bottom: 2.5rem;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+  }
 }
