@@ -219,6 +219,31 @@ body, nav, footer, section, .bio-photo, .music-list,
   z-index: 1;
 }
 
+.hero-overlay-text {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 3rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-overlay-tagline {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+}
+
+.hero-overlay-bbc {
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
 /* ---- SHARED ---- */
 .section-inner {
   max-width: 860px;
