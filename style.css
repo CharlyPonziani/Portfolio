@@ -222,7 +222,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 
 .hero-overlay-text {
   position: absolute;
-  bottom: 21%;
+  bottom: 14%;
   right: 5.5rem;
   z-index: 2;
   display: flex;
