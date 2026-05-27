@@ -469,6 +469,27 @@
           }, 200);
         });
 
+        // Click-to-seek on progress bar
+        var progress = btn.closest('.track-item').querySelector('.track-progress');
+        progress.style.cursor = 'pointer';
+        progress.addEventListener('click', function(e) {
+          if (!audio.duration) return;
+          var rect = progress.getBoundingClientRect();
+          var pct = (e.clientX - rect.left) / rect.width;
+          audio.currentTime = pct * audio.duration;
+          bar.style.width = (pct * 100) + '%';
+          if (!btn.classList.contains('playing')) {
+            stopCurrent();
+            audio.play();
+            btn.classList.add('playing');
+            btn.querySelector('.play-icon').textContent = '■';
+            currentAudio = audio; currentBtn = btn; currentBar = bar;
+            currentTicker = setInterval(function() {
+              if (audio.duration) bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+            }, 200);
+          }
+        });
+
         audio.addEventListener('ended', stopCurrent);
       });
     })();
