@@ -296,5 +296,14 @@
   </footer>
 
   <script src="lang.js?v=8"></script>
+  <script>
+    // Stop all other media when a new one starts playing
+    document.addEventListener('play', function(e) {
+      var allMedia = document.querySelectorAll('video, audio');
+      allMedia.forEach(function(m) {
+        if (m !== e.target) { m.pause(); }
+      });
+    }, true);
+  </script>
 </body>
 </html>
