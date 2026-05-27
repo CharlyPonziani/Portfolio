@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" fill="#faf8f4"/>
-  <rect width="32" height="32" fill="none" stroke="#1a1a1a" stroke-width="1"/>
-  <text x="16" y="21.5" font-family="Didot, 'Didot LT STD', 'GFS Didot', 'Bodoni MT', Georgia, serif" font-size="11" fill="#1a1a1a" text-anchor="middle" letter-spacing="2" font-weight="400">CP</text>
+  <!-- stave lines -->
+  <line x1="6" y1="11" x2="26" y2="11" stroke="#1a1a1a" stroke-width="0.9"/>
+  <line x1="6" y1="15" x2="26" y2="15" stroke="#1a1a1a" stroke-width="0.9"/>
+  <line x1="6" y1="19" x2="26" y2="19" stroke="#1a1a1a" stroke-width="0.9"/>
+  <!-- note head on middle line -->
+  <ellipse cx="18" cy="15" rx="3.2" ry="2.3" transform="rotate(-15 18 15)" fill="#1a1a1a"/>
+  <!-- note stem -->
+  <line x1="21" y1="15" x2="21" y2="7" stroke="#1a1a1a" stroke-width="1.2"/>
 </svg>

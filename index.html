@@ -172,9 +172,17 @@
 
         <div class="bespoke-audio">
           <p class="bespoke-audio-label" data-en="Listen — sample commission" data-it="Ascolta — esempio">Listen — sample commission</p>
-          <audio controls preload="none" style="width:100%;margin-top:0.5rem;">
-            <source src="assets/audio/nml-bespoke.m4a" type="audio/mp4">
-          </audio>
+          <div class="track-item" style="border-top:1px solid var(--border);border-bottom:none;padding:0.85rem 0;">
+            <button class="track-play" data-bespoke="true" id="bespoke-play-btn" aria-label="Play sample commission">
+              <span class="play-icon">▶</span>
+            </button>
+            <div class="track-info">
+              <span class="track-name" data-en="No Man's Land — Charly Ponziani" data-it="No Man's Land — Charly Ponziani">No Man's Land — Charly Ponziani</span>
+              <div class="track-progress">
+                <div class="track-bar" id="bespoke-progress-bar"></div>
+              </div>
+            </div>
+          </div>
           <p style="font-size:0.72rem;color:var(--muted);line-height:1.8;margin-top:1rem;font-style:italic;">
             &ldquo;Charly&rsquo;s goal when composing music for a narrative product is to allow the music to honour the story rather than serve its own agenda.&rdquo;
           </p>
@@ -237,6 +245,9 @@
 
       <div class="contact-grid">
         <div class="contact-info">
+          <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;"
+             data-en="Currently accepting commissions &amp; bookings for 2025/26"
+             data-it="Disponibile per commissioni &amp; prenotazioni 2025/26">Currently accepting commissions &amp; bookings for 2025/26</p>
           <p data-en="Whether you'd like to commission a piece, book a performance, explore a collaboration, or simply say hello — I'd love to hear from you."
              data-it="Che tu voglia commissionare un brano, prenotare un'esibizione, esplorare una collaborazione, o semplicemente salutarmi — mi farebbe piacere sentirti.">
             Whether you'd like to commission a piece, book a performance, explore a collaboration, or simply say hello — I'd love to hear from you.
@@ -339,7 +350,7 @@
       let currentAudio = null;
       let currentBtn = null;
 
-      document.querySelectorAll('.track-play').forEach(btn => {
+      document.querySelectorAll('.track-play:not([data-bespoke])').forEach(btn => {
         const src = btn.dataset.src;
         const limit = parseFloat(btn.dataset.limit) || 45;
         const bar = btn.closest('.track-item').querySelector('.track-bar');
@@ -389,6 +400,41 @@
           }
         });
       });
+    })();
+  </script>
+  <script>
+    (function() {
+      var btn = document.getElementById('bespoke-play-btn');
+      var bar = document.getElementById('bespoke-progress-bar');
+      if (!btn) return;
+      var audio = new Audio('assets/audio/nml-bespoke.m4a');
+      var ticker = null;
+
+      function stop() {
+        audio.pause();
+        clearInterval(ticker);
+        bar.style.width = '0%';
+        btn.classList.remove('playing');
+        btn.querySelector('.play-icon').textContent = '▶';
+      }
+
+      btn.addEventListener('click', function() {
+        if (btn.classList.contains('playing')) {
+          stop();
+        } else {
+          document.querySelectorAll('audio, video').forEach(function(m) { m.pause(); });
+          audio.play();
+          btn.classList.add('playing');
+          btn.querySelector('.play-icon').textContent = '■';
+          ticker = setInterval(function() {
+            if (audio.duration) {
+              bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+            }
+          }, 200);
+        }
+      });
+
+      audio.addEventListener('ended', stop);
     })();
   </script>
 </body>
