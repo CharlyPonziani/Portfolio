@@ -319,7 +319,7 @@
   </section>
 
   <!-- BACK TO TOP -->
-  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" style="display:none;position:fixed;bottom:5.5rem;right:2rem;width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:var(--bg);color:var(--muted);font-size:0.75rem;cursor:pointer;z-index:999;transition:opacity 0.3s,transform 0.3s;letter-spacing:0;">↑</button>
+  <button id="back-to-top" onclick="(function(){var start=window.scrollY,duration=1200,startTime=null;function step(t){if(!startTime)startTime=t;var elapsed=t-startTime,progress=Math.min(elapsed/duration,1),ease=1-Math.pow(1-progress,4);window.scrollTo(0,start*(1-ease));if(progress<1)requestAnimationFrame(step);}requestAnimationFrame(step);})()" aria-label="Back to top" style="display:none;position:fixed;bottom:5.5rem;right:2rem;width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:var(--bg);color:var(--muted);font-size:0.75rem;cursor:pointer;z-index:999;transition:opacity 0.3s,transform 0.3s;letter-spacing:0;">↑</button>
 
   <!-- FOOTER -->
   <footer>
