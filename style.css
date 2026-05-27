@@ -28,7 +28,7 @@
   --nav-bg:     rgba(28,28,28,0.96);
 }
 
-html { scroll-behavior: auto; }
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
@@ -698,6 +698,10 @@ footer {
   color: var(--muted);
   letter-spacing: 0.08em;
 }
+
+.footer-nav { display: flex; gap: 1.5rem; align-items: center; }
+.footer-nav a { color: var(--muted); font-size: 0.65rem; letter-spacing: 0.08em; text-decoration: none; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--text); }
 
 .footer-socials { display: flex; gap: 1.25rem; align-items: center; }
 
