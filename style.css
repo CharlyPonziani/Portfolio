@@ -28,7 +28,7 @@
   --nav-bg:     rgba(28,28,28,0.96);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   background: var(--bg);
