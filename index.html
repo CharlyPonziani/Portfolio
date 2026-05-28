@@ -374,114 +374,92 @@
     });
   </script>
   <script>
-    (function () {
-      let currentAudio = null;
-      let currentBtn = null;
+    (function() {
+      var current = null;
 
-      document.querySelectorAll('.track-play:not([data-bespoke])').forEach(btn => {
-        const src = btn.dataset.src;
-        const limit = parseFloat(btn.dataset.limit) || 45;
-        const bar = btn.closest('.track-item').querySelector('.track-bar');
-        let audio = null;
-        let ticker = null;
+      function stopAll() {
+        if (!current) return;
+        current.audio.pause();
+        current.audio.currentTime = 0;
+        clearInterval(current.ticker);
+        current.bar.style.width = '0%';
+        current.btn.classList.remove('playing');
+        current.btn.querySelector('.play-icon').textContent = '▶';
+        current = null;
+      }
 
-        function stop() {
-          if (audio) { audio.pause(); audio.currentTime = 0; }
-          clearInterval(ticker);
-          bar.style.width = '0%';
-          btn.classList.remove('playing');
-          btn.querySelector('.play-icon').textContent = '▶';
-        }
+      document.querySelectorAll('.track-play:not([data-bespoke])').forEach(function(btn) {
+        var limit = parseFloat(btn.dataset.limit) || 45;
+        var bar = btn.closest('.track-item').querySelector('.track-bar');
+        var audio = new Audio(btn.dataset.src);
+        audio.preload = 'metadata';
 
-        function play() {
-          if (!audio) { audio = new Audio(src); }
+        btn.addEventListener('click', function() {
+          if (current && current.audio === audio) { stopAll(); return; }
+          stopAll();
           audio.currentTime = 0;
-          audio.play();
+          var p = audio.play();
+          if (p) p.catch(function() { stopAll(); });
           btn.classList.add('playing');
           btn.querySelector('.play-icon').textContent = '■';
-          ticker = setInterval(() => {
-            const pct = Math.min(audio.currentTime / limit, 1) * 100;
-            bar.style.width = pct + '%';
-            if (audio.currentTime >= limit) { stop(); }
+          var ticker = setInterval(function() {
+            bar.style.width = Math.min(audio.currentTime / limit, 1) * 100 + '%';
+            if (audio.currentTime >= limit) stopAll();
           }, 200);
-        }
-
-        btn.addEventListener('click', () => {
-          if (currentAudio && currentAudio !== audio) {
-            currentBtn && currentBtn.click && stop.call({ audio: currentAudio, btn: currentBtn, bar: currentBtn.closest('.track-item').querySelector('.track-bar') });
-            // stop previous
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-            currentBtn.classList.remove('playing');
-            currentBtn.querySelector('.play-icon').textContent = '▶';
-            currentBtn.closest('.track-item').querySelector('.track-bar').style.width = '0%';
-          }
-
-          if (btn.classList.contains('playing')) {
-            stop();
-            currentAudio = null;
-            currentBtn = null;
-          } else {
-            play();
-            currentAudio = audio;
-            currentBtn = btn;
-          }
+          current = { audio: audio, btn: btn, bar: bar, ticker: ticker };
         });
+
+        audio.addEventListener('ended', stopAll);
       });
     })();
   </script>
   <script>
     (function() {
       var btn = document.getElementById('bespoke-play-btn');
+      var progress = btn.closest('.track-item').querySelector('.track-progress');
       var bar = document.getElementById('bespoke-progress-bar');
-      if (!btn) return;
       var audio = new Audio('assets/audio/nml-bespoke.m4a');
+      audio.preload = 'metadata';
       var ticker = null;
+      progress.style.cursor = 'pointer';
 
       function stop() {
-        audio.pause();
-        clearInterval(ticker);
+        clearInterval(ticker); ticker = null;
         bar.style.width = '0%';
         btn.classList.remove('playing');
         btn.querySelector('.play-icon').textContent = '▶';
       }
 
+      function startTicker() {
+        clearInterval(ticker);
+        ticker = setInterval(function() {
+          if (audio.duration) bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        }, 200);
+      }
+
+      function doPlay() {
+        var p = audio.play();
+        if (p) p.catch(function() { stop(); });
+        btn.classList.add('playing');
+        btn.querySelector('.play-icon').textContent = '■';
+        startTicker();
+      }
+
       btn.addEventListener('click', function() {
-        if (btn.classList.contains('playing')) {
-          stop();
-        } else {
-          document.querySelectorAll('audio, video').forEach(function(m) { m.pause(); });
-          audio.play();
-          btn.classList.add('playing');
-          btn.querySelector('.play-icon').textContent = '■';
-          ticker = setInterval(function() {
-            if (audio.duration) {
-              bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
-            }
-          }, 200);
-        }
+        if (btn.classList.contains('playing')) { audio.pause(); stop(); } else { doPlay(); }
       });
 
-      // Click-to-seek on bespoke progress bar
-      var bespokeProgress = document.getElementById('bespoke-play-btn').closest('.track-item').querySelector('.track-progress');
-      bespokeProgress.style.cursor = 'pointer';
-      bespokeProgress.addEventListener('click', function(e) {
+      progress.addEventListener('click', function(e) {
         if (!audio.duration) return;
-        var rect = bespokeProgress.getBoundingClientRect();
-        var pct = (e.clientX - rect.left) / rect.width;
+        var pct = Math.max(0, Math.min(1, (e.clientX - progress.getBoundingClientRect().left) / progress.offsetWidth));
         audio.currentTime = pct * audio.duration;
         bar.style.width = (pct * 100) + '%';
-        if (!btn.classList.contains('playing')) {
-          audio.play();
-          btn.classList.add('playing');
-          btn.querySelector('.play-icon').textContent = '■';
-          ticker = setInterval(function() {
-            if (audio.duration) bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
-          }, 200);
-        }
+        if (!btn.classList.contains('playing')) doPlay();
+        else startTicker();
       });
 
       audio.addEventListener('ended', stop);
+      audio.addEventListener('pause', function() { if (!audio.ended) { clearInterval(ticker); ticker = null; } });
     })();
   </script>
 </body>
