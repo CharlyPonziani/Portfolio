@@ -418,8 +418,20 @@
 
         progress.addEventListener('click', function(e) {
           var pct = Math.max(0, Math.min(1, (e.clientX - progress.getBoundingClientRect().left) / progress.offsetWidth));
-          if (audio.duration) { audio.currentTime = pct * audio.duration; bar.style.width = (pct * 100) + '%'; }
-          if (!current || current.audio !== audio) startPlaying(pct);
+          audio.currentTime = pct * limit;
+          bar.style.width = (pct * 100) + '%';
+          if (!current || current.audio !== audio) {
+            stopAll();
+            var p = audio.play();
+            if (p) p.catch(function() { stopAll(); });
+            btn.classList.add('playing');
+            btn.querySelector('.play-icon').textContent = '■';
+            var ticker = setInterval(function() {
+              bar.style.width = Math.min(audio.currentTime / limit, 1) * 100 + '%';
+              if (audio.currentTime >= limit) stopAll();
+            }, 200);
+            current = { audio: audio, btn: btn, bar: bar, ticker: ticker };
+          }
         });
 
         audio.addEventListener('ended', stopAll);
