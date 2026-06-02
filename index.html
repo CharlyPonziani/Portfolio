@@ -84,7 +84,7 @@
         </div>
         <div class="music-meta">
           <p class="section-label" data-en="Debut EP" data-it="EP di debutto">Debut EP</p>
-          <h3 class="section-title" style="font-size:1.6rem;">La Luce di Mezzo</h3>
+          <h3 class="section-title" style="font-size:1.6rem;">La Luce di Mezzo <span style="font-size:0.75rem;color:var(--muted);font-family:var(--font-sans);letter-spacing:0.05em;font-weight:normal;">2025</span></h3>
           <p style="font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-top:-0.6rem;margin-bottom:1.5rem;font-style:italic;" data-en="Out Now" data-it="Disponibile ora">Out Now</p>
           <p style="font-size:0.85rem;color:var(--muted);line-height:2.1;margin-bottom:1.5rem;"
              data-html-en="a light that does not belong to a place, but to a feeling.<br>somewhere between Italy and Ireland — three piano pieces, entirely mine."
@@ -378,6 +378,15 @@
     (function() {
       var current = null;
 
+      function pauseCurrent() {
+        if (!current) return;
+        current.audio.pause();
+        clearInterval(current.ticker);
+        current.btn.classList.remove('playing');
+        current.btn.querySelector('.play-icon').textContent = '▶';
+        current = null;
+      }
+
       function stopAll() {
         if (!current) return;
         current.audio.pause();
@@ -398,9 +407,9 @@
         progress.style.cursor = 'pointer';
 
         function startPlaying(seekPct) {
-          stopAll();
+          if (current && current.audio !== audio) stopAll();
+          else pauseCurrent();
           if (seekPct !== undefined && audio.duration) audio.currentTime = seekPct * audio.duration;
-          else audio.currentTime = 0;
           var p = audio.play();
           if (p) p.catch(function() { stopAll(); });
           btn.classList.add('playing');
@@ -413,7 +422,7 @@
         }
 
         btn.addEventListener('click', function() {
-          if (current && current.audio === audio) { stopAll(); return; }
+          if (current && current.audio === audio) { pauseCurrent(); return; }
           startPlaying();
         });
 
@@ -486,6 +495,28 @@
 
       audio.addEventListener('ended', stop);
       audio.addEventListener('pause', function() { if (!audio.ended) { clearInterval(ticker); ticker = null; } });
+    })();
+  </script>
+  <script>
+    // Contact form confirmation message
+    (function() {
+      var form = document.getElementById('contact-form');
+      var success = document.getElementById('form-success');
+      if (!form || !success) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(r) {
+          if (r.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          }
+        }).catch(function() {});
+      });
     })();
   </script>
 </body>
