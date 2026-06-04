@@ -559,7 +559,7 @@ body, nav, footer, section, .bio-photo, .music-list,
 /* ---- BIO SECTION ---- */
 #bio { border-top: 1px solid var(--border); }
 
-#bio .section-inner { max-width: 980px; }
+#bio .section-inner { max-width: 860px; }
 
 .bio-grid {
   display: grid;
