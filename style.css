@@ -161,7 +161,7 @@ body, nav, footer, section, .bio-photo, .music-list,
   object-position: center 25%;
   display: block;
   /* CSS sharpening — helps a little with compressed images */
-  filter: grayscale(100%) contrast(1.08) brightness(0.97);
+  filter: contrast(1.05) brightness(0.95);
   image-rendering: -webkit-optimize-contrast;
 }
 
