@@ -188,6 +188,20 @@
         <p class="gallery-caption">EP recording session, First Presbyterian Church, Belfast, 2025</p>
       </div>
 
+      <div class="gallery-item full-width">
+        <div class="video-card" id="inveramento-card" onclick="this.querySelector('.video-card-thumb').style.display='none'; this.querySelector('.video-card-overlay').style.display='none'; this.querySelector('video').style.display='block'; this.querySelector('video').play();" style="max-width:none;width:100%;">
+          <img class="video-card-thumb" src="assets/gallery/inveramento-poster.jpg" alt="Inveramento Parte I — music video" style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
+          <div class="video-card-overlay">
+            <div class="video-play-btn"></div>
+            <span class="video-card-label" data-en="Play" data-it="Riproduci">Play</span>
+          </div>
+          <video preload="metadata" controls onclick="event.stopPropagation()" style="display:none;width:100%;aspect-ratio:16/9;object-fit:cover;background:#1e1e1e;">
+            <source src="assets/gallery/inveramento-parte-i.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="gallery-caption">Inveramento Parte I — Music video, First Presbyterian Church, Belfast, 2025</p>
+      </div>
+
     </div>
   </div>
 
