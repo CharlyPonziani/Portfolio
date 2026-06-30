@@ -122,6 +122,27 @@
       color: rgba(255,255,255,0.6);
     }
 
+    /* Film thumbnail card */
+    .film-thumb-card {
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .film-thumb-video {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    .film-thumb-card:hover .film-thumb-video { filter: grayscale(60%); }
+    .film-thumb-card:hover .video-play-btn { background: rgba(255,255,255,0.15); }
+
     @media (max-width: 768px) {
       .gallery-section { padding: 3rem 1.5rem; }
       .gallery-grid-2,
@@ -313,22 +334,27 @@
   <div class="gallery-section">
     <p class="section-label" data-en="Films" data-it="Film">Films</p>
     <div class="gallery-grid-2">
-      <div class="gallery-item" style="max-width:360px;">
-        <div class="video-card" id="night-you-left-card" onclick="this.querySelector('.video-card-thumb').style.display='none'; this.querySelector('.video-card-overlay').style.display='none'; this.querySelector('video').style.display='block'; this.querySelector('video').play();" style="max-width:none;width:100%;">
-          <video class="video-card-thumb" preload="metadata" muted style="width:100%;aspect-ratio:9/16;object-fit:cover;filter:grayscale(100%);transition:filter 0.3s;">
+      <div class="gallery-item" style="max-width:260px;">
+        <div class="film-thumb-card" id="night-you-left-card" data-src="assets/video/the-night-you-left.mp4">
+          <video class="film-thumb-video" preload="metadata" muted playsinline tabindex="-1">
             <source src="assets/video/the-night-you-left.mp4" type="video/mp4">
           </video>
           <div class="video-card-overlay">
             <div class="video-play-btn"></div>
             <span class="video-card-label" data-en="Play" data-it="Riproduci">Play</span>
           </div>
-          <video preload="metadata" controls onclick="event.stopPropagation()" style="display:none;width:100%;aspect-ratio:9/16;background:#1e1e1e;">
-            <source src="assets/video/the-night-you-left.mp4" type="video/mp4">
-          </video>
         </div>
         <p class="gallery-caption" data-en="The Night You Left — Original score · Dir. Illia Todchuck, 2025" data-it="The Night You Left — Colonna sonora originale · Regia di Illia Todchuck, 2025">The Night You Left — Original score · Dir. Illia Todchuck, 2025</p>
       </div>
     </div>
+  </div>
+
+  <!-- Film lightbox modal -->
+  <div id="film-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;">
+    <button id="film-modal-close" aria-label="Close" style="position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;opacity:0.7;line-height:1;">✕</button>
+    <video id="film-modal-video" controls playsinline
+      style="max-height:90vh;max-width:min(90vw,420px);width:auto;height:auto;background:#000;display:block;">
+    </video>
   </div>
 
   <!-- PRESS -->
@@ -384,6 +410,45 @@
         if (m !== e.target) { m.pause(); }
       });
     }, true);
+
+    // Film lightbox
+    (function() {
+      var modal = document.getElementById('film-modal');
+      var modalVideo = document.getElementById('film-modal-video');
+      var closeBtn = document.getElementById('film-modal-close');
+
+      function openModal(src) {
+        modalVideo.src = src;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        modalVideo.play();
+      }
+
+      function closeModal() {
+        modalVideo.pause();
+        modalVideo.src = '';
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.film-thumb-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+          openModal(card.dataset.src);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
+
+      modalVideo.addEventListener('ended', closeModal);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
   </script>
 </body>
 </html>
